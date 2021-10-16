@@ -21,4 +21,4 @@ class create_controller{
 }
 $c=new create_controller();
 $c->transforma();
-echo "<script> alert ('Registrado com Sucesso!'); document.location='/mvc/cadastro'</script>";
+echo "<script> alert ('Registrado com Sucesso!'); document.location='/astaj_valida/cadastro'</script>";

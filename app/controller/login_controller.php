@@ -14,7 +14,7 @@ if (mysqli_num_rows($verificar)!=1){
      }else{
          $_SESSION['login']=$login;
          $_SESSION['senha']=$senha;
-         header("Location:/mvc/cadastro");
+         header("Location:/astaj_valida/cadastro");
      } 
 
 

@@ -18,7 +18,7 @@ public function tabela(){
     echo  "<th>" . $row ['id']. "</th>" ;
     echo  "<td>" . $row ['nome']. "</td>" ;
     echo  "<td>" . $row ['login']. "</td>" ;
-    echo "<td><a class = 'btn btn-primary' href = '/mvc/editar?id=". 
+    echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
     $row['id']."'> Editar </a> <a class='btn btn-danger'href='#'" . "onClick='delete_user(" . $row['id'] . ")'> Excluir </a> </td>";
     echo  "</td>" ;
     }
