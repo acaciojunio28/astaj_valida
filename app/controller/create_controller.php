@@ -9,12 +9,19 @@ class create_controller{
    
    private function incluir(){
     
-    $nome= $_POST ['nome'];
-    $login=$_POST ['login'];
-    $senha=$_POST ['senha'];
+    $matricula= $_POST['matricula'];
+    $nome=$_POST['nome'];
+    $cpf=$_POST['cpf'];
+    $tipo=$_POST['tipo'];
+    $baneficiario=$_POST['beneficiario'];
+    $idade=$_POST['idade'];
+    $adesao=$_POST ['adesao'];
+    $desconto=$_POST['desconto'];
+    $total=$_POST['total'];
+
 
     $cadastro= new banco();
-    $inserir=$cadastro->create($nome,$login,$senha);
+    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total);
    
    }
 
