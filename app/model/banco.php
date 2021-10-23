@@ -32,11 +32,11 @@ class banco{
         return $array;
     }
     public function pesquisa($id){
-        $verificar=mysqli_query($this->mysql,"SELECT * FROM usuarios WHERE id='$id'");
+        $verificar=mysqli_query($this->mysql,"SELECT * FROM cadastro WHERE id='$id'");
        return mysqli_fetch_assoc($verificar);
             }
-    public function update($nome,$login,$id){
-        mysqli_query($this->mysql,"UPDATE cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',idade='$idade',adesao='$adesao',desconto='$desconto',desconto_total='$total' WHERE id='$id'");
+    public function update($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total,$id){
+        mysqli_query($this->mysql,"UPDATE cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',beneficiario='$baneficiario',idade='$idade',adesao='$adesao',desconto='$desconto',desconto_total='$total' WHERE id='$id'");
     }
     public function delete($id){
         mysqli_query($this->mysql,"DELETE FROM cadastro WHERE id='$id'");
@@ -50,3 +50,4 @@ class banco{
 }
 //$c=new banco();
 //$c->create(12332,'junio',123655,'trarar','nnn',25,'nora',12,1253);
+//$c->update(123546,'joao',2354,'tata','mmm',15,'nora',12,23);
