@@ -7,8 +7,15 @@
 <thead>
 <tr class="table-dark">
     <th>id</th>
-    <th>nome</th>
-    <th>login</th>
+    <th>Matrícula</th>
+    <th>Nome</th>
+    <th>CPF</th>
+    <th>Tipo de Plano</th>
+    <th>Baneficiário</th>
+    <th>Idade</th>
+    <th>Adesão</th>
+    <th>Desconto</th>
+    <th>Total de Desconto</th>
     <th></th>
 </tr>
 </thead>

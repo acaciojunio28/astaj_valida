@@ -25,7 +25,7 @@ class banco{
    
     }
     public function read(){
-        $verificar=mysqli_query($this->mysql,"SELECT * FROM usuarios");
+        $verificar=mysqli_query($this->mysql,"SELECT * FROM cadastro");
         while($row=mysqli_fetch_array($verificar)) {
             $array[]=$row;
         }
@@ -39,7 +39,7 @@ class banco{
         mysqli_query($this->mysql,"UPDATE usuarios SET nome='$nome', login='$login' WHERE id='$id'");
     }
     public function delete($id){
-        mysqli_query($this->mysql,"DELETE FROM usuarios WHERE id='$id'");
+        mysqli_query($this->mysql,"DELETE FROM cadastro WHERE id='$id'");
     }
     public function login($login,$senha){
         $verificar=mysqli_query($this->mysql,"SELECT * FROM usuarios WHERE login = '$login' AND logim = '$senha'");
