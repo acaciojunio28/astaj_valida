@@ -22,10 +22,10 @@
   <div class="cotainer" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto ">
       <li class="nav-item active">
-        <a class="nav-link text-white" href="/mvc/cadastro">Cadastrar</a>
+        <a class="nav-link text-white" href="/astaj_valida/cadastro">Cadastrar</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="/mvc/listar">Listar</a>
+        <a class="nav-link text-white" href="/astaj_valida/listar">Listar</a>
       </li>
     </ul>
   </div>

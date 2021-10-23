@@ -21,7 +21,7 @@ $o->pesquisa($id);
 if ( isset( $_POST['editar'])) {
     $o-> update ($_POST['nome'] , $_POST[ 'login' ],$_POST['id']);
     echo  "<script> alert ('Registro incluído com sucesso!');</script>" ;
-    return header('Location: /mvc/listar');
+    return header('Location: /astaj_valida/listar');
    
 }
 
