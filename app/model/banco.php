@@ -36,7 +36,7 @@ class banco{
        return mysqli_fetch_assoc($verificar);
             }
     public function update($nome,$login,$id){
-        mysqli_query($this->mysql,"UPDATE usuarios SET nome='$nome', login='$login' WHERE id='$id'");
+        mysqli_query($this->mysql,"UPDATE cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',idade='$idade',adesao='$adesao',desconto='$desconto',desconto_total='$total' WHERE id='$id'");
     }
     public function delete($id){
         mysqli_query($this->mysql,"DELETE FROM cadastro WHERE id='$id'");
