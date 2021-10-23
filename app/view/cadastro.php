@@ -1,5 +1,5 @@
 <?php require ('layout/heder.php');?>
-<div>
+<div id="cadastro">
 
 <form method="POST" action="app/controller/create_controller.php">
     <div class="form-group col-md-1">
@@ -17,7 +17,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-2 ">
         <label>Tipo:</label>
         <select name="tipo" class="form-control">
         <option selected>Escolher</option>
