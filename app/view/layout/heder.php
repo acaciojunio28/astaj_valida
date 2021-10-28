@@ -11,6 +11,7 @@
     <script src="./public/js/bootstrap/bootstrap.js" crossorigin="anonymous"></script>
     <script src="./public/js/confirm_delete.js"></script>
     <script src="./public/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 </head>
 <body>

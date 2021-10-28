@@ -11,7 +11,7 @@ public function pesquisa($id){
     }
 public function update($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$desconto,$total,$id){
     $editar=new banco();
-    $editar->update($matricula,$nome,$cpf,$tipo,$idade,$beneficiario,$adesao,$desconto,$total,$id);
+    $editar->update($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$desconto,$total,$id);
     
     }
 }

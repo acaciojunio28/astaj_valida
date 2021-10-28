@@ -3,7 +3,7 @@
 <div>
 <a class="btn btn-success" href="app/controller/planilha.php" id="relatorio"> Gerar Relatório </a>
 
-<table border="1" class="table table-hover" id="tabela">
+<table border="1" class="table table-hover " id="tabela">
 <thead>
 <tr class="table-dark">
     <th>id</th>
@@ -16,6 +16,8 @@
     <th>Adesão</th>
     <th>Desconto</th>
     <th>Total de Desconto</th>
+    <th>Data de Nascimento</th>
+    <th>Situação</th>
     <th></th>
 </tr>
 </thead>

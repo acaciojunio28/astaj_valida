@@ -1,10 +1,11 @@
 <?php require ('layout/heder.php');?>
+
 <div id="cadastro">
 
 <form method="POST" action="app/controller/create_controller.php">
     <div class="form-group col-md-1">
         <label>Matricula:</label>
-        <input type="text" name="matricula" id="senha"class="form-control">
+        <input type="text" name="matricula" id="senha"class="form-control"onkeypress="$(this).mask('0000000000');">
     </div>
     <div class="row">
     <div class="col-md-3">
@@ -13,7 +14,7 @@
     </div>
     <div class="col-md-3">
         <label>CPF:</label>
-        <input type="text" name="cpf" id="senha" class="form-control">
+        <input type="text" minlength="14" maxlength="14" name="cpf" id="cpf" class="form-control"onkeypress="$(this).mask('000.000.000-00');">
     </div>
 </div>
 <div class="row">
@@ -36,7 +37,7 @@
     </div>
         <div class="col-md-2">
             <label>Idade:</label>
-            <input type="text" name="idade" id="senha" class="form-control">
+            <input type="text" minlength="3" maxlength="3" name="idade" id="senha" class="form-control" onkeypress="$(this).mask('#00');">
         </div>
     </div>
     <div class="form-group col-md-2">
@@ -46,11 +47,11 @@
     <div class="row">
         <div class="col-md-2">
             <label>Desconto:</label>
-            <input type="text" name="desconto" id="senha" class="form-control">
+            <input type="text" name="desconto" id="senha" class="form-control"  onkeypress="$(this).mask('R$ #.##0,00', {reverse: true});">
         </div>
         <div class="col-md-2">
             <label>Total:</label>
-            <input type="text" name="total" id="senha" class="form-control">
+            <input type="text" name="total" id="senha" class="form-control"  onkeypress="$(this).mask('R$ #.##0,00', {reverse: true});">
         </div>
     </div>
     <div class="mt-2 mb-3">
