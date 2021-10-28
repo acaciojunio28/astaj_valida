@@ -14,7 +14,7 @@ if ($verificar==0){
      }else{
          $_SESSION['login']=$login;
          $_SESSION['senha']=$senha;
-         header("Location:/astaj_valida/cadastro");
+         header("Location:/astaj_valida/listar");
      } 
 
 

@@ -4,9 +4,16 @@ $lista=new banco;
 $C=$lista->read();
 $html = "<table>
 <tr>
-    <th>id</th>
-    <th>nome</th>
-    <th>login</th>
+<th>id</th>
+<th>Matrícula</th>
+<th>Nome</th>
+<th>CPF</th>
+<th>Tipo de Plano</th>
+<th>Baneficiário</th>
+<th>Idade</th>
+<th>Adesão</th>
+<th>Desconto</th>
+<th>Total de Desconto</th>
 </tr>";
 
 foreach ($C as $row) {
@@ -14,8 +21,15 @@ foreach ($C as $row) {
 
 $html .= "<tr>
 <th>" . $row ['id'] . "</th> 
+<td>" . $row ['matricula']. "</td>
 <td>" . $row ['nome']. "</td>
-<td>" . $row ['login']. "</td>
+<td>" . $row ['cpf']. "</td>
+<td>" . $row ['tipo_de_plano']. "</td>
+<td>" . $row ['beneficiario']. "</td>
+<td>" . $row ['idade']. "</td>
+<td>" . $row ['adesao']. "</td>
+<td>" . $row ['desconto']. "</td>
+<td>" . $row ['desconto_total']. "</td>
 </td>";};
 
 //$html .= "</table>";

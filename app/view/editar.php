@@ -16,7 +16,7 @@
     <input type="hidden" name="id" value="<?php echo $o->pesquisa($id)['id'];?>">
     <div class="form-group col-md-1">
         <label>Matricula:</label>
-        <input type="text" name="matricula" id="senha"class="form-control" value="<?php echo $o->pesquisa($id)['matricula'];?>">
+        <input type="text" name="matricula" id="senha"class="form-control" onkeypress="$(this).mask('0000000000');" value="<?php echo $o->pesquisa($id)['matricula'];?>">
     </div>
     <div class="row">
     <div class="col-md-3">
@@ -25,7 +25,7 @@
     </div>
     <div class="col-md-3">
         <label>CPF:</label>
-        <input type="text" name="cpf" id="senha" class="form-control"value="<?php echo $o->pesquisa($id)['cpf'];?>">
+        <input type="text" name="cpf" id="senha" class="form-control"onkeypress="$(this).mask('000.000.000-00');" value="<?php echo $o->pesquisa($id)['cpf'];?>">
     </div>
 </div>
 <div class="row">
@@ -48,7 +48,7 @@
     </div>
         <div class="col-md-2">
             <label>Idade:</label>
-            <input type="text" name="idade" id="senha" class="form-control" value="<?php echo $o->pesquisa($id)['idade'];?>">
+            <input type="text" name="idade" id="senha" class="form-control" onkeypress="$(this).mask('#00');" value="<?php echo $o->pesquisa($id)['idade'];?>">
         </div>
     </div>
     <div class="form-group col-md-2">
@@ -58,15 +58,15 @@
     <div class="row">
         <div class="col-md-2">
             <label>Desconto:</label>
-            <input type="text" name="desconto" id="senha" class="form-control"value="<?php echo $o->pesquisa($id)['desconto'];?>">
+            <input type="text" name="desconto" id="senha" class="form-control" onkeypress="$(this).mask('R$ #.##0,00', {reverse: true});" value="<?php echo $o->pesquisa($id)['desconto'];?>">
         </div>
         <div class="col-md-2">
             <label>Total:</label>
-            <input type="text" name="total" id="senha" class="form-control"value="<?php echo $o->pesquisa($id)['desconto_total'];?>">
+            <input type="text" name="total" id="senha" class="form-control" onkeypress="$(this).mask('R$ #.##0,00', {reverse: true});" value="<?php echo $o->pesquisa($id)['desconto_total'];?>">
         </div>
     </div>
     <div class="mt-2 mb-3">
-    <input type="submit" value="Cadastrar" id="cadastrar" name="editar"class="btn btn-success">
+    <input type="submit" value="editar" id="cadastrar" name="editar"class="btn btn-success">
     </div>
 </form>
 
