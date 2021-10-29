@@ -11,7 +11,7 @@ class banco{
 
     private function conexao() {
 
-   $this->mysql=mysqli_connect("localhost","root","","astaj");
+   $this->mysql=mysqli_connect("localhost","root","","astaj602_site");
 
     }
     //public function create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total){
@@ -42,7 +42,7 @@ class banco{
         mysqli_query($this->mysql,"DELETE FROM cadastro WHERE id='$id'");
     }
     public function login($login,$senha){
-        $verificar=mysqli_query($this->mysql,"SELECT * FROM usuarios WHERE login = '$login' AND logim = '$senha'");
+        $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_users WHERE user_login = '$login' AND user_pass = '$senha'");
         return mysqli_num_rows($verificar);
    
     }

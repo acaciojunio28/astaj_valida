@@ -28,6 +28,9 @@
       <li class="nav-item">
         <a class="nav-link text-white" href="/astaj_valida/listar">Listar</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="app/controller/sair.php">Sair</a>
+      </li>
     </ul>
   </div>
 </nav>
