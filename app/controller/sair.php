@@ -6,7 +6,7 @@ unset(
     $_SESSION['login'],
 
 );
-header("Location:/astaj_valida/");
+header("Location:/www.astajecorretora.com/astaj_valida/");
 session_destroy();
 }
     }

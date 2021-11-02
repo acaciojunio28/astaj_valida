@@ -1,7 +1,8 @@
 <?php require ('layout/heder.php');?>
 <?php require('app/controller/read_controller.php');?>
 <?php require('app/controller/conect.php');?>
-<?session_start();?>
+<?//session_start();?>
+
 <div>
 <a class="btn btn-success" href="app/controller/planilha.php" id="relatorio"> Gerar Relatório </a>
 

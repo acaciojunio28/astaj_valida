@@ -31,10 +31,17 @@ public function tabela(){
     $mes = date ('m');
     $ano = date ('Y');
     //Data do aniversário
-    $data = explode("/",$row['data_nascimento']);
-    $dianasc = $data[0];
+    //$data = explode("/",$row['data_nascimento']);
+    //$dianasc = $data[0];
+    //$mesnasc = $data[1];
+    //$anonasc = $data[2];
+
+    //Data do aniversário
+    $data = explode("-",$row['data_nascimento']);
+    $dianasc = $data[2];
     $mesnasc = $data[1];
-    $anonasc = $data[2];
+    $anonasc = $data[0];
+
     //Calculando sua idade
     $idade = $ano - $anonasc;
     
@@ -55,7 +62,7 @@ public function tabela(){
         echo "<td> maior que 30 </td>";
     }
 
-    echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
+    echo "<td><a class = 'btn btn-primary' href = '/www.astajecorretora.com/astaj_valida/editar?id=". 
     $row['id']."'> Editar </a> <a class='btn btn-danger'href='#'" . "onClick='delete_user(" . $row['id'] . ")'> Excluir </a> </td>";
     echo  "</td>" ;
     }
