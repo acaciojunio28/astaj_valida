@@ -21,7 +21,7 @@ $o->pesquisa($id);
 if ( isset( $_POST['editar'])) {
     $o-> update ( $_POST['matricula'],$_POST['nome'],$_POST['cpf'],$_POST['tipo'],$_POST['beneficiario'],$_POST['idade'],$_POST ['adesao'],$_POST['desconto'],$_POST['total'],$_POST['id']);
     echo  "<script> alert ('Registro incluído com sucesso!');</script>" ;
-    return header('Location: /astaj_valida/listar');
+    return header('Location: /www.astajecorretora.com/astaj_valida/listar');
    
 }
 

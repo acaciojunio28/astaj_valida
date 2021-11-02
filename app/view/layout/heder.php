@@ -16,17 +16,17 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg  navbar-light bg-primary shadow p-3 mb-5" id="nav">
+<nav class="navbar navbar-expand-lg  navbar-light bg-primary2 shadow p-3 mb-5" id="nav">
 <a class="navbar-brand" href="#">
  
 </a>
   <div class="cotainer" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto ">
       <li class="nav-item active">
-        <a class="nav-link text-white" href="/astaj_valida/cadastro">Cadastrar</a>
+        <a class="nav-link text-white" href="/www.astajecorretora.com/astaj_valida/cadastro">Cadastrar</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="/astaj_valida/listar">Listar</a>
+        <a class="nav-link text-white" href="/www.astajecorretora.com/astaj_valida/listar">Listar</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="app/controller/sair.php">Sair</a>

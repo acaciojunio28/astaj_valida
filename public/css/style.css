@@ -12,3 +12,9 @@
     margin-left:5px;
     
 }
+
+/** header e footer */
+
+.bg-primary2{
+    background-color: #b31119 !important;
+}
