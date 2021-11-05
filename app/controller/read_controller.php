@@ -62,7 +62,7 @@ public function tabela(){
         echo "<td> maior que 30 </td>";
     }
 
-    echo "<td><a class = 'btn btn-primary' href = '/www.astajecorretora.com/astaj_valida/editar?id=". 
+    echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
     $row['id']."'> Editar </a> <a class='btn btn-danger'href='#'" . "onClick='delete_user(" . $row['id'] . ")'> Excluir </a> </td>";
     echo  "</td>" ;
     }

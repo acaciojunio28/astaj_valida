@@ -23,10 +23,10 @@
   <div class="cotainer" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto ">
       <li class="nav-item active">
-        <a class="nav-link text-white" href="/www.astajecorretora.com/astaj_valida/cadastro">Cadastrar</a>
+        <a class="nav-link text-white" href="/astaj_valida/cadastro">Cadastrar</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="/www.astajecorretora.com/astaj_valida/listar">Listar</a>
+        <a class="nav-link text-white" href="/astaj_valida/listar">Listar</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="app/controller/sair.php">Sair</a>
