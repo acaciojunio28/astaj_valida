@@ -25,7 +25,7 @@ public function tabela(){
     echo  "<td>" . date('d/m/Y', strtotime($row['adesao'])). "</td>" ;
     echo  "<td>" . $row ['desconto']. "</td>" ;
     echo  "<td>" . $row ['desconto_total']. "</td>" ;
-    echo  "<td>" . $row ['data_nascimento']. "</td>" ;
+    echo  "<td>" . date('d/m/Y', strtotime($row['data_nascimento'])). "</td>" ;
      //Data atual
     $dia = date ('d');
     $mes = date ('m');

@@ -1,6 +1,6 @@
 <?php require ('layout/heder.php');?>
 <?php require('app/controller/read_controller.php');?>
-<?php require('app/controller/conect.php');?>
+<?php// require('app/controller/conect.php');?>
 <?//session_start();?>
 
 <div>

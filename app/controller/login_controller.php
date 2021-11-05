@@ -4,8 +4,8 @@ require('../model/banco.php');
 
 //recuperar configurações do wordpress para criptografar senha
 //https://developer.wordpress.org/reference/functions/wp_hash_password/
-include_once ('../../../wp-config.php');
-global $wpdb;
+//include_once ('../../../wp-config.php');
+//global $wpdb;
 //essa função deve ser chamada para verificação da griptografia do wordpress
 wp_hash_password($_POST['senha']);
 
