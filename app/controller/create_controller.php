@@ -18,14 +18,40 @@ class create_controller{
     $adesao=$_POST ['adesao'];
     $desconto=$_POST['desconto'];
     $total=$_POST['total'];
+    $nascimento=$_POST['data_nascimento'];
+   if(empty($idade)){
+      //Data atual
+     $dia = date ('d');
+     $mes = date ('m');
+     $ano = date ('Y');
+     
+     //Data do aniversário
+     $data = explode("-",$nascimento);
+     $dianasc = $data[2];
+     $mesnasc = $data[1];
+     $anonasc = $data[0];
+ 
+     //Calculando sua idade
+     $idade = $ano - $anonasc;
+     
+     if ($mes <  $mesnasc){
+ 
+     $idade--;
+     }
+     elseif($mes==$mesnasc && $dia<=$dianasc){
+ 
+     $idade--;
+ 
+     }
+    }
 
 
     $cadastro= new banco();
-    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total);
+    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total,$nascimento);
    
    }
 
 }
 $c=new create_controller();
 $c->transforma();
-echo "<script> alert ('Registrado com Sucesso!'); document.location='/astaj_valida/cadastro'</script>";
+echo "<script> alert ('Registrado com Sucesso!'); document.location='/astaj_valida/listar'</script>";
