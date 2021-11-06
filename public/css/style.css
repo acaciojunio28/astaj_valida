@@ -1,0 +1,20 @@
+#relatorio{
+    margin-bottom: 25px;
+}
+#tabela{
+ text-align: center;
+}
+#nav{
+    margin-bottom: 25px; 
+
+   }
+#cadastro{
+    margin-left:5px;
+    
+}
+
+/** header e footer */
+
+.bg-primary2{
+    background-color: #b31119 !important;
+}
