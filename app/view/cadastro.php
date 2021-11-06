@@ -37,12 +37,18 @@
     </div>
         <div class="col-md-2">
             <label>Idade:</label>
-            <input type="text" minlength="3" maxlength="3" name="idade" id="senha" class="form-control" onkeypress="$(this).mask('#00');">
+            <input type="text" minlength="0" maxlength="3" name="idade" id="senha" class="form-control" onkeypress="$(this).mask('#00');">
         </div>
     </div>
-    <div class="form-group col-md-2">
+    <div class="row">
+    <div class="col-md-2">
     <label>Adesão:</label>
     <input type="date" name="adesao" id="senha" class="form-control">
+    </div>
+    <div class="col-md-2">
+    <label>Data de nascimento:</label>
+    <input type="date" name="data_nascimento" id="senha" class="form-control">
+    </div>
     </div>
     <div class="row">
         <div class="col-md-2">

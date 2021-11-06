@@ -51,9 +51,15 @@
             <input type="text" name="idade" id="senha" class="form-control" onkeypress="$(this).mask('#00');" value="<?php echo $o->pesquisa($id)['idade'];?>">
         </div>
     </div>
-    <div class="form-group col-md-2">
+    <div class="row">
+    <div class="col-md-2">
     <label>Adesão:</label>
     <input type="date" name="adesao" id="senha" class="form-control" value="<?php echo $o->pesquisa($id)['adesao'];?>">
+    </div>
+    <div class="col-md-2">
+    <label>Data de nascimento:</label>
+    <input type="date" name="data_nascimento" id="senha" class="form-control" value="<?php echo $o->pesquisa($id)['data_nascimento'];?>">
+    </div>
     </div>
     <div class="row">
         <div class="col-md-2">
