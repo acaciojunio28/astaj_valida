@@ -4,7 +4,15 @@
 <?//session_start();?>
 
 <div>
+
+<div class="row">
+<div class="col-md-2">
 <a class="btn btn-success" href="app/controller/planilha.php" id="relatorio"> Gerar Relatório </a>
+</div>
+<div class="col-md-3 mb-2 ">
+    <input type="text" class="form-control" id="search" placeholder="Buscar">
+</div>
+</div>
 
 <table border="1" class="table table-hover " id="tabela">
 <thead>
@@ -24,7 +32,7 @@
     <th></th>
 </tr>
 </thead>
-<tbody>
+<tbody id="myTable">
 
 <?php new read_controller() ?>
 

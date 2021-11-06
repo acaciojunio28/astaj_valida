@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planos de Saúde e Odontológico em Brasília - DF</title>
+    <script src="./public/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <link rel="icon" type="imagem/png" href="public/img/logo.png" \>
     <link rel="stylesheet" type="text/css" href="./public/css/style.css" media="screen" />
     <link href="./public/css/bootstrap/bootstrap.css" rel="stylesheet" />
     <script src="./public/js/bootstrap/bootstrap.js" crossorigin="anonymous"></script>
     <script src="./public/js/confirm_delete.js"></script>
-    <script src="./public/js/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
 
 </head>
 <body>

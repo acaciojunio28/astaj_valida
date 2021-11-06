@@ -32,6 +32,7 @@ $html .= "<tr>
 <td>" . $row ['desconto_total']. "</td>
 </td>";};
 
+
 //$html .= "</table>";
 $html .= "</table>";
 

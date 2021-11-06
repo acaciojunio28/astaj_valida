@@ -67,7 +67,6 @@ class banco{
         }
    
     }
-   
 }
 //$c=new banco();
 //$c->create(12332,'junio',123655,'trarar','nnn',25,'nora',12,1253);
