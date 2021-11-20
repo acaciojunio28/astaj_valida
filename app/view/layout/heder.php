@@ -7,12 +7,12 @@
     <title>Planos de Saúde e Odontológico em Brasília - DF</title>
     <script src="./public/js/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://kit.fontawesome.com/335f4c7504.js" crossorigin="anonymous"></script>
     <link rel="icon" type="imagem/png" href="public/img/logo.png" \>
     <link rel="stylesheet" type="text/css" href="./public/css/style.css" media="screen" />
     <link href="./public/css/bootstrap/bootstrap.css" rel="stylesheet" />
     <script src="./public/js/bootstrap/bootstrap.js" crossorigin="anonymous"></script>
     <script src="./public/js/confirm_delete.js"></script>
-    <script src="https://kit.fontawesome.com/335f4c7504.js" crossorigin="anonymous"></script>
 
 </head>
 <body>

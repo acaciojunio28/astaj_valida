@@ -81,7 +81,7 @@ public function tabela(){
     }
 
     echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
-    $row['id']."'> Editar <i class='fas fa-edit'></i> </a> <a class='btn btn-danger'href='#'" . "onClick='delete_user(" . $row['id'] . ")'> Exluir <i class='fas fa-trash-alt'></i> </a></td>";
+    $row['id']."'> <i class='fas fa-edit'></i> </a> <a class='btn btn-danger'href='#'" . "onClick='delete_user(" . $row['id'] . ")'>  <i class='fas fa-trash-alt'></i> </a></td>";
     echo  "</td>" ;
     }
         
