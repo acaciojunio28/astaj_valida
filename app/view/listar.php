@@ -8,7 +8,7 @@
 
 <div class="row">
 <div class="col-md-2">
-<a class="btn btn-success" href="app/controller/planilha.php" id="relatorio"> Gerar Relatório </a>
+<a class="btn btn-success" href="app/controller/planilha.php" id="relatorio"> Gerar Relatório </i></a>
 </div>
 <div class="col-md-3 mb-2 ">
     <input type="text" class="form-control" id="search" placeholder="Buscar">

@@ -54,6 +54,24 @@ public function tabela(){
     $idade--;
 
     }
+
+    /**logica para calcular situação */
+    //$idade = 16
+    //$faixa_etaria = 1;
+    //conecta banco e recupera faixa min e max
+//$faixa_min = 0
+   // $faixa_max =  15
+
+    //if($idade > $faixa_min && $idade < ($faixa_max - 1mes){
+        //$situacao = "OK";
+//}elseif($idade > ($faixa_max - 1mes) && $idade < $faixa_max){
+    //    $situacao = "anteção";
+    //}else{
+       // $situacao = "vencido";
+
+   // }
+    /**logica para calcular situação */
+
     if ($idade <= 20) {
         echo "<td>igual ou menor que 20</td>";
     } elseif ($idade > 20 && $idade<=30) {
@@ -63,7 +81,7 @@ public function tabela(){
     }
 
     echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
-    $row['id']."'> Editar </a> <a class='btn btn-danger'href='#'" . "onClick='delete_user(" . $row['id'] . ")'> Excluir </a> </td>";
+    $row['id']."'> Editar <i class='fas fa-edit'></i> </a> <a class='btn btn-danger'href='#'" . "onClick='delete_user(" . $row['id'] . ")'> Exluir <i class='fas fa-trash-alt'></i> </a></td>";
     echo  "</td>" ;
     }
         
