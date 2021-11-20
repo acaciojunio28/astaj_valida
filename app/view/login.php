@@ -15,10 +15,12 @@
 </head>
 <Body>
 <div class="container">
-        <div class="row justify-content-center align-items-center" style="height:100vh">
+     
+        <div class="row justify-content-center align-items-center" style="height:100vh"  id="login">
             <div class="col-4">
                 <div class="card">
                     <div class="card-body">
+                    <img src="public/img/logo.png" class="rounded mx-auto d-block" id="logo">
                         <form  method="POST" action="app/controller/login_controller.php" autocomplete="off">
                             <div class="form-group">
                                 <input type="text" class="form-control mt-2" name="login">

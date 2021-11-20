@@ -12,6 +12,7 @@
     <link href="./public/css/bootstrap/bootstrap.css" rel="stylesheet" />
     <script src="./public/js/bootstrap/bootstrap.js" crossorigin="anonymous"></script>
     <script src="./public/js/confirm_delete.js"></script>
+    <script src="https://kit.fontawesome.com/335f4c7504.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
