@@ -1,6 +1,6 @@
 <?php
 
-
+require_once ("conection.php");
 class banco{
 
    private $mysql;
@@ -12,7 +12,7 @@ class banco{
 
     private function conexao() {
 
-   $this->mysql=mysqli_connect("localhost","root","","astaj602_site");
+   $this->mysql=mysqli_connect(BD_SERVIDOR,BD_USUARIO,BD_SENHA,BD_BANCO);
 
     }
     //public function create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total){
