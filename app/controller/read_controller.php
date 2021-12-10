@@ -26,6 +26,7 @@ public function tabela(){
     echo  "<td>" . $row ['desconto']. "</td>" ;
     echo  "<td>" . $row ['desconto_total']. "</td>" ;
     echo  "<td>" . date('d/m/Y', strtotime($row['data_nascimento'])). "</td>" ;
+    echo  "<td>" . $row ['faixa_etaria']. "</td>" ;
      //Data atual
     $dia = date ('d');
     $mes = date ('m');
@@ -71,13 +72,19 @@ public function tabela(){
 
    // }
     /**logica para calcular situação */
-
-    if ($idade <= 20) {
-        echo "<td>igual ou menor que 20</td>";
-    } elseif ($idade > 20 && $idade<=30) {
-        echo "<td> maior que 20 </td>";
-    } elseif ($idade > 30) {
-        echo "<td> maior que 30 </td>";
+    if (empty($row['faixa_etaria'])){
+        echo "<td></td>";
+    }
+    else if ($row['faixa_etaria']==1 && $idade<=20) {
+        echo "<td>OK</td>";
+    }
+    elseif ($row['faixa_etaria']==2 && $idade>20 && $idade<=50) {
+        echo "<td>OK</td>";
+    } 
+    elseif ($row['faixa_etaria']==3 && $idade>50) {
+        echo "<td>OK</td>";
+    }else{
+        echo "<td> vencido </td>";
     }
 
     echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 

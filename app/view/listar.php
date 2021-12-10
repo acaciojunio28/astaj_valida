@@ -29,6 +29,7 @@
     <th>Desconto</th>
     <th>Total de Desconto</th>
     <th>Data de Nascimento</th>
+    <th>faixa etaria</th>
     <th>Situação</th>
     <th></th>
 </tr>

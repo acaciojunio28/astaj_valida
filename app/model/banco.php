@@ -20,9 +20,9 @@ class banco{
     //mysqli_query($this->mysql,"INSERT INTO cadastro (matricula,nome,cpf,'tipo de plano',beneficiário,idade,adesão,desconto,'desconto total') VALUES ('$matricula','$nome','$cpf','$tipo','$baneficiario','$idade','$adesao','$desconto','$total')");
    
    // }
-    public function create($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$desconto,$total,$nascimento){
+   public function create($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$desconto,$total,$nascimento,$faixa){
         
-    mysqli_query($this->mysql,"INSERT INTO astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,idade,adesao,desconto,desconto_total,data_nascimento) VALUES ('$matricula','$nome','$cpf','$tipo','$beneficiario','$idade','$adesao','$desconto','$total','$nascimento')");
+    mysqli_query($this->mysql,"INSERT INTO astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,idade,adesao,desconto,desconto_total,data_nascimento,faixa_etaria) VALUES ('$matricula','$nome','$cpf','$tipo','$beneficiario','$idade','$adesao','$desconto','$total','$nascimento','$faixa')");
    
     }
     public function read(){
@@ -36,8 +36,8 @@ class banco{
         $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro WHERE id='$id'");
        return mysqli_fetch_assoc($verificar);
             }
-    public function update($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total,$nascimento,$id){
-        mysqli_query($this->mysql,"UPDATE astaje_valida_cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',beneficiario='$baneficiario',idade='$idade',adesao='$adesao',desconto='$desconto',desconto_total='$total',data_nascimento='$nascimento' WHERE id='$id'");
+    public function update($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total,$nascimento,$faixa,$id){
+        mysqli_query($this->mysql,"UPDATE astaje_valida_cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',beneficiario='$baneficiario',idade='$idade',adesao='$adesao',desconto='$desconto',desconto_total='$total',data_nascimento='$nascimento',faixa_etaria='$faixa' WHERE id='$id'");
     }
     public function delete($id){
         mysqli_query($this->mysql,"DELETE FROM astaje_valida_cadastro WHERE id='$id'");

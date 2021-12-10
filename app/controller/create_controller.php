@@ -19,6 +19,7 @@ class create_controller{
     $desconto=$_POST['desconto'];
     $total=$_POST['total'];
     $nascimento=$_POST['data_nascimento'];
+    $faixa=$_POST['faixa'];
    if(empty($idade)){
       //Data atual
      $dia = date ('d');
@@ -47,7 +48,7 @@ class create_controller{
 
 
     $cadastro= new banco();
-    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total,$nascimento);
+    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total,$nascimento,$faixa);
    
    }
 

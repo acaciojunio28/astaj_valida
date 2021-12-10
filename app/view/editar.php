@@ -60,6 +60,15 @@
     <label>Data de nascimento:</label>
     <input type="date" name="data_nascimento" id="senha" class="form-control" value="<?php echo $o->pesquisa($id)['data_nascimento'];?>">
     </div>
+    <div class="col-md-1">
+    <label>faixa etaria:</label>
+    <select name="faixa" class="form-control">
+            <option selected value="<?php echo $o->pesquisa($id)['faixa_etaria'];?>"><?php echo $o->pesquisa($id)['faixa_etaria'];?></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+    </select>
+    </div>
     </div>
     <div class="row">
         <div class="col-md-2">
