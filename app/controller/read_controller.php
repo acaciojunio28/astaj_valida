@@ -72,19 +72,31 @@ public function tabela(){
 
    // }
     /**logica para calcular situação */
+    $idade1 = $ano - $anonasc;
+
     if (empty($row['faixa_etaria'])){
         echo "<td></td>";
     }
     else if ($row['faixa_etaria']==1 && $idade<=20) {
-        echo "<td>OK</td>";
+    
+        if($idade1>20 && $mes == ($mesnasc-1) || $mesnasc ){
+
+            echo "<td>Atenção</td>";}
+
+        else{echo "<td>OK</td>";}
     }
+    
     elseif ($row['faixa_etaria']==2 && $idade>20 && $idade<=50) {
-        echo "<td>OK</td>";
+        if($idade1>50 && $mes == ($mesnasc-1) || $mesnasc ){
+
+            echo "<td>Atenção</td>";}
+
+        else{echo "<td>OK</td>";}
     } 
     elseif ($row['faixa_etaria']==3 && $idade>50) {
         echo "<td>OK</td>";
     }else{
-        echo "<td> vencido </td>";
+        echo "<td> Vencido </td>";
     }
 
     echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
