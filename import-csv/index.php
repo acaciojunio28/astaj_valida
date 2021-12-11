@@ -55,10 +55,14 @@ if (isset($_POST["import"])) {
             if (isset($column[9])) {
                 $data_nascimento = mysqli_real_escape_string($conn, $column[9]);
             }
+            $faixa_etaria = "";
+            if (isset($column[10])) {
+                $faixa_etaria = mysqli_real_escape_string($conn, $column[10]);
+            }
             
             
-            $sqlInsert = "INSERT into astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,idade,adesao,desconto,desconto_total,data_nascimento) values (?,?,?,?,?,?,?,?,?,?)";
-            $paramType = "ssssssssss";
+            $sqlInsert = "INSERT into astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,idade,adesao,desconto,desconto_total,data_nascimento,faixa_etaria) values (?,?,?,?,?,?,?,?,?,?,?)";
+            $paramType = "sssssssssss";
             $paramArray = array(
                 $matricula,
                 $nome,
@@ -69,7 +73,8 @@ if (isset($_POST["import"])) {
 				$adesao,
 				$desconto,
 				$desconto_total,
-				$data_nascimento
+				$data_nascimento,
+                $faixa_etaria
 
             );
             $insertId = $db->insert($sqlInsert, $paramType, $paramArray);
@@ -96,13 +101,13 @@ body {
     font-family: Arial;
     width: 550px;
 }
-
+/** 
 .outer-scontainer {
     background: #F0F0F0;
     border: #e0dfdf 1px solid;
     padding: 20px;
     border-radius: 2px;
-}
+}*/
 
 .input-row {
     margin-top: 0px;
@@ -178,7 +183,7 @@ $(document).ready(function() {
 </head>
 
 <body>
-    <h2>Import CSV file into Mysql using PHP</h2>
+    <h2>Importar clientes</h2>
 
     <div id="response"
         class="<?php if(!empty($type)) { echo $type . " display-block"; } ?>">
@@ -221,6 +226,7 @@ $(document).ready(function() {
 					<th>desconto</th>
 					<th>desconto_total</th>
 					<th>data_nascimento</th>
+                    <th>faixa_etaria</th>
 
 
 
@@ -243,6 +249,7 @@ $(document).ready(function() {
 					<td><?php  echo $row['desconto']; ?></td>
 					<td><?php  echo $row['desconto_total']; ?></td>
 					<td><?php  echo $row['data_nascimento']; ?></td>
+                    <td><?php  echo $row['faixa_etaria']; ?></td>
 
                 </tr>
                     <?php
