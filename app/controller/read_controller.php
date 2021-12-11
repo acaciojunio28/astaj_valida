@@ -12,6 +12,7 @@ public function __construct(){
 }
 public function tabela(){
     $C=$this->lista->read();
+    $D=$this->lista->read1();
     foreach ($C as $row) {
     
     echo  "<tr>" ;
@@ -77,23 +78,23 @@ public function tabela(){
     if (empty($row['faixa_etaria'])){
         echo "<td></td>";
     }
-    else if ($row['faixa_etaria']==1 && $idade<=20) {
+    else if ($row['faixa_etaria']==1 && $idade<=$D[0]["maximo"]) {
     
-        if($idade1>20 && $mes == ($mesnasc-1) || $mesnasc ){
+        if(($idade1>$D[0]["maximo"]) && ($mes == ($mesnasc-1) || $mesnasc )){
 
             echo "<td>Atenção</td>";}
 
         else{echo "<td>OK</td>";}
     }
     
-    elseif ($row['faixa_etaria']==2 && $idade>20 && $idade<=50) {
-        if($idade1>50 && $mes == ($mesnasc-1) || $mesnasc ){
+    elseif ($row['faixa_etaria']==2 && $idade>$D[1]["minimo"] && $idade<=$D[1]["maximo"]) {
+        if(($idade1>$D[1]["maximo"]) && ($mes == ($mesnasc-1) ||$mesnasc) ){
 
             echo "<td>Atenção</td>";}
 
         else{echo "<td>OK</td>";}
     } 
-    elseif ($row['faixa_etaria']==3 && $idade>50) {
+    elseif ($row['faixa_etaria']==3 && $idade>$D[2]["minimo"]) {
         echo "<td>OK</td>";
     }else{
         echo "<td> Vencido </td>";
@@ -108,4 +109,5 @@ public function tabela(){
 
 
 }
+
    
