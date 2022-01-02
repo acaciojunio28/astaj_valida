@@ -1,3 +1,4 @@
+<?php require('../app/controller/conect.php');?>
 <?php
 use Phppot\DataSource;
 
@@ -196,11 +197,10 @@ $(document).ready(function() {
                 name="frmCSVImport" id="frmCSVImport"
                 enctype="multipart/form-data">
                 <div class="input-row">
-                    <label class="col-md-4 control-label">Choose CSV
-                        File</label> <input type="file" name="file"
+                    <label class="col-md-4 control-label">Arquivo CSV</label> <input type="file" name="file"
                         id="file" accept=".csv">
                     <button type="submit" id="submit" name="import"
-                        class="btn-submit">Import</button>
+                        class="btn-submit">Importar</button>
                     <br />
 
                 </div>
