@@ -1,3 +1,4 @@
+    <?php require('app/controller/conect.php');?>
 <?php require ('layout/heder.php');?>
 <?php require('app/controller/update_controller.php');?>
 
