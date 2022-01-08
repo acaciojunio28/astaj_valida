@@ -39,6 +39,13 @@ class banco{
         }
         return $array;
     }
+    public function read2(){
+        $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_tipo");
+        while($row=mysqli_fetch_array($verificar)) {
+            $array[]=$row;
+        }
+        return $array;
+    }
     public function pesquisa($id){
         $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro WHERE id='$id'");
        return mysqli_fetch_assoc($verificar);
