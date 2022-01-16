@@ -19,8 +19,45 @@ $o=new update_controller();
 $id = filter_input ( INPUT_GET ,'id',FILTER_SANITIZE_NUMBER_INT);
 $o->pesquisa($id);
 if ( isset( $_POST['editar'])) {
-    $o-> update ( $_POST['matricula'],$_POST['nome'],$_POST['cpf'],$_POST['tipo'],$_POST['beneficiario'],$_POST['idade'],$_POST ['adesao'],$_POST['desconto'],$_POST['total'],$_POST['data_nascimento'],$_POST['faixa'],$_POST['id']);
-    echo  "<script> console.log('Registro incluído com sucesso!'); document.location='/astaj_valida/listar';</script>" ;
+$matricula= $_POST['matricula'];
+$nome=$_POST['nome'];
+$cpf=$_POST['cpf'];
+$tipo=$_POST['tipo'];
+$baneficiario=$_POST['beneficiario'];
+$adesao=$_POST ['adesao'];
+$desconto=$_POST['desconto'];
+$faixa=$_POST['faixa'];
+$lista=new banco();
+$total=$lista->read2($_POST['faixa']);
+$nascimento=$_POST['data_nascimento'];
+
+    //Data atual
+   $dia = date ('d');
+   $mes = date ('m');
+   $ano = date ('Y');
+   
+   //Data do aniversário
+   $data = explode("-",$nascimento);
+   $dianasc = $data[2];
+   $mesnasc = $data[1];
+   $anonasc = $data[0];
+
+   //Calculando sua idade
+   $idade = $ano - $anonasc;
+   
+if ($mes <  $mesnasc){
+
+   $idade--;
+   }
+   
+elseif($mes==$mesnasc && $dia<=$dianasc){
+
+   $idade--;
+
+   }
+    
+$o-> update ( $matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total[$tipo],$nascimento,$faixa,$_POST['id']);
+ echo  "<script> console.log('Registro incluído com sucesso!'); document.location='/astaj_valida/listar';</script>" ;
     //header('Location: /astaj_valida/listar');
    
 }

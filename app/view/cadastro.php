@@ -1,4 +1,4 @@
-<?php require('app/controller/conect.php');?>
+<?php //require('app/controller/conect.php');?>
 <?php require ('layout/heder.php');?>
 
 <div id="cadastro">
@@ -23,9 +23,11 @@
         <label>Tipo:</label>
         <select name="tipo" class="form-control">
         <option selected>Escolher</option>
-        <option value="Afinidade Básico"> Afinidade Basico </option>
-        <option value="Afinidade Prático"> Afinidade Pratico</option>
-        <option value="Afinidade Versatico"> Afinidade Versatico </option>
+        <option value="afinidade_basico"> Afinidade Básico </option>
+        <option value="afinidade_pratico"> Afinidade Prático</option>
+        <option value="afinidade_versatil"> Afinidade Versatil</option>
+        <option value="afinidade_dinamico"> Afinidade Dinâmico</option>
+        <option value="afinidade_lider"> Afinidade Lider </option>
       </select>
     </div>
     <div class="col-md-2">
@@ -50,13 +52,20 @@
     <label>Data de nascimento:</label>
     <input type="date" name="data_nascimento" id="senha" class="form-control">
     </div>
-    <div class="col-md-1">
+    <div class="col-md-3">
     <label>faixa etaria:</label>
     <select name="faixa" class="form-control">
             <option selected>Escolher</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="1">até 18 anos</option>
+            <option value="2">de 19 até 23 anos</option>
+            <option value="3">de 24 até 28 anos</option>
+            <option value="4">de 29 até 33 anos</option>
+            <option value="5">de 34 até 38 anos</option>
+            <option value="6">de 39 até 43 anos</option>
+            <option value="7">de 44 até 48 anos</option>
+            <option value="8">de 49 até 53 anos</option>
+            <option value="9">de 54 até 58 anos</option>
+            <option value="10">mais de 59 anos</option>
     </select>
     </div>
     </div>

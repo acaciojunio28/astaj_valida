@@ -13,6 +13,7 @@ public function __construct(){
 public function tabela(){
     $C=$this->lista->read();
     $D=$this->lista->read1();
+
     foreach ($C as $row) {
     
     echo  "<tr>" ;
@@ -27,7 +28,41 @@ public function tabela(){
     echo  "<td>" . $row ['desconto']. "</td>" ;
     echo  "<td>" . $row ['desconto_total']. "</td>" ;
     echo  "<td>" . date('d/m/Y', strtotime($row['data_nascimento'])). "</td>" ;
-    echo  "<td>" . $row ['faixa_etaria']. "</td>" ;
+    $list=$row ['faixa_etaria'];
+    switch ($list) {
+        case 1:
+            echo "<td>até 18 anos</td>" ;;
+            break;
+        case 2:
+            echo "<td>de 19 até 23 anos</td>";
+            break;
+        case 3:
+            echo "<td>de 24 até 28 anos</td>";
+            break;
+        case 4:
+                echo "<td>de 29 até 33 anos</td>";
+            break;
+        case 5:
+                echo "<td>de 34 até 38 anos</td>";
+            break;
+        case 6:
+                echo "<td>de 39 até 43 anos</td>";
+            break;
+        case 7:
+                echo "<td>de 44 até 48 anos</td>";
+            break;
+        case 8:
+                echo "<td>de 49 até 53 anos</td>";
+            break;
+        case 9:
+                echo "<td>de 54 até 58 anos</td>";
+            break; 
+        case 10:
+                echo "<td>mais de 59 anos</td>";
+            break; 
+
+    }
+    
      //Data atual
     $dia = date ('d');
     $mes = date ('m');
@@ -57,22 +92,6 @@ public function tabela(){
 
     }
 
-    /**logica para calcular situação */
-    //$idade = 16
-    //$faixa_etaria = 1;
-    //conecta banco e recupera faixa min e max
-//$faixa_min = 0
-   // $faixa_max =  15
-
-    //if($idade > $faixa_min && $idade < ($faixa_max - 1mes){
-        //$situacao = "OK";
-//}elseif($idade > ($faixa_max - 1mes) && $idade < $faixa_max){
-    //    $situacao = "anteção";
-    //}else{
-       // $situacao = "vencido";
-
-   // }
-    /**logica para calcular situação */
     $idade1 = $ano - $anonasc;
 
     if (empty($row['faixa_etaria'])){
@@ -93,13 +112,64 @@ public function tabela(){
             echo "<td>Atenção</td>";}
 
         else{echo "<td>OK</td>";}
-    } 
-    elseif ($row['faixa_etaria']==3 && $idade>$D[2]["minimo"]) {
+        }
+
+        elseif ($row['faixa_etaria']==3 && $idade>$D[2]["minimo"] && $idade<=$D[2]["maximo"]) {
+            if(($idade1>$D[2]["maximo"]) && ($mes == ($mesnasc-1) ||$mesnasc) ){
+    
+                echo "<td>Atenção</td>";}
+    
+            else{echo "<td>OK</td>";}
+        }
+            elseif ($row['faixa_etaria']==4 && $idade>$D[3]["minimo"] && $idade<=$D[3]["maximo"]) {
+                if(($idade1>$D[3]["maximo"]) && ($mes == ($mesnasc-1) ||$mesnasc) ){
+        
+                    echo "<td>Atenção</td>";}
+        
+                else{echo "<td>OK</td>";}
+            }
+            elseif ($row['faixa_etaria']==5 && $idade>$D[4]["minimo"] && $idade<=$D[4]["maximo"]) {
+                    if(($idade1>$D[4]["maximo"]) && ($mes == ($mesnasc-1) ||$mesnasc) ){
+            
+                        echo "<td>Atenção</td>";}
+            
+                    else{echo "<td>OK</td>";}
+            }
+            elseif ($row['faixa_etaria']==6 && $idade>$D[5]["minimo"] && $idade<=$D[5]["maximo"]) {
+                    if(($idade1>$D[5]["maximo"]) && ($mes == ($mesnasc-1) ||$mesnasc) ){
+                
+                            echo "<td>Atenção</td>";}
+                
+                     else{echo "<td>OK</td>";}
+            }
+            elseif ($row['faixa_etaria']==7 && $idade>$D[6]["minimo"] && $idade<=$D[6]["maximo"]) {
+                    if(($idade1>$D[6]["maximo"]) && ($mes == ($mesnasc-1) ||$mesnasc) ){
+                
+                            echo "<td>Atenção</td>";}
+                
+                    else{echo "<td>OK</td>";}
+            }
+            elseif ($row['faixa_etaria']==8 && $idade>$D[7]["minimo"] && $idade<=$D[7]["maximo"]) {
+                     if(($idade1>$D[7]["maximo"]) && ($mes == ($mesnasc-1) ||$mesnasc) ){
+                
+                            echo "<td>Atenção</td>";}
+                
+                    else{echo "<td>OK</td>";}
+                
+            } 
+            elseif ($row['faixa_etaria']==9 && $idade>$D[8]["minimo"] && $idade<=$D[8]["maximo"]) {
+                if(($idade1>$D[8]["maximo"]) && ($mes == ($mesnasc-1) ||$mesnasc) ){
+        
+                    echo "<td>Atenção</td>";}
+        
+                else{echo "<td>OK</td>";}
+            }
+    elseif ($row['faixa_etaria']==10 && $idade>$D[9]["maximo"]) {
         echo "<td>OK</td>";
     }else{
         echo "<td> Vencido </td>";
     }
-
+    
     echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
     $row['id']."'> <i class='fas fa-edit'></i> </a> <a class='btn btn-danger'href='#'" .
     "onClick='delete_user(" . $row['matricula'] . ")'>  <i class='fas fa-trash-alt'></i> </a></td>";

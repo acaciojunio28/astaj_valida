@@ -39,6 +39,10 @@ class banco{
         }
         return $array;
     }
+    public function read2($faixa){
+    $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_tipo WHERE faixa_etaria='$faixa'");
+    return mysqli_fetch_assoc($verificar);
+    }
     public function pesquisa($id){
         $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro WHERE id='$id'");
        return mysqli_fetch_assoc($verificar);

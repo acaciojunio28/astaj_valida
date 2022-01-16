@@ -1,4 +1,4 @@
-    <?php require('app/controller/conect.php');?>
+    <?php //require('app/controller/conect.php');?>
 <?php require ('layout/heder.php');?>
 <?php require('app/controller/update_controller.php');?>
 
@@ -34,9 +34,12 @@
         <label>Tipo:</label>
         <select name="tipo" class="form-control">
         <option selected value="<?php echo $o->pesquisa($id)['tipo_de_plano'];?>"><?php echo $o->pesquisa($id)['tipo_de_plano'];?></option>
-        <option value="Afinidade Básico"> Afinidade Basico </option>
-        <option value="Afinidade Prático"> Afinidade Pratico</option>
-        <option value="Afinidade Versatico"> Afinidade Versatico </option>
+        <option value="afinidade_basico"> Afinidade Básico </option>
+        <option value="afinidade_pratico"> Afinidade Prático</option>
+        <option value="afinidade_versatil"> Afinidade Versatil</option>
+        <option value="afinidade_dinamico"> Afinidade Dinâmico</option>
+        <option value="afinidade_lider"> Afinidade Lider </option>
+
       </select>
     </div>
     <div class="col-md-2">
@@ -61,13 +64,55 @@
     <label>Data de nascimento:</label>
     <input type="date" name="data_nascimento" id="senha" class="form-control" value="<?php echo $o->pesquisa($id)['data_nascimento'];?>">
     </div>
-    <div class="col-md-1">
+    <div class="col-md-3">
     <label>faixa etaria:</label>
     <select name="faixa" class="form-control">
-            <option selected value="<?php echo $o->pesquisa($id)['faixa_etaria'];?>"><?php echo $o->pesquisa($id)['faixa_etaria'];?></option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+        
+            <option selected value="<?php echo $o->pesquisa($id)['faixa_etaria'];?>"><?php 
+            $list= $o->pesquisa($id)['faixa_etaria'];
+             switch ($list) {
+                case 1:
+                    echo "<td>até 18 anos</td>" ;;
+                    break;
+                case 2:
+                    echo "<td>de 19 até 23 anos</td>";
+                    break;
+                case 3:
+                    echo "<td>de 24 até 28 anos</td>";
+                    break;
+                case 4:
+                        echo "<td>de 29 até 33 anos</td>";
+                    break;
+                case 5:
+                        echo "<td>de 34 até 38 anos</td>";
+                    break;
+                case 6:
+                        echo "<td>de 39 até 43 anos</td>";
+                    break;
+                case 7:
+                        echo "<td>de 44 até 48 anos</td>";
+                    break;
+                case 8:
+                        echo "<td>de 49 até 53 anos</td>";
+                    break;
+                case 9:
+                        echo "<td>de 54 até 58 anos</td>";
+                    break; 
+                case 10:
+                        echo "<td>mais de 59 anos</td>";
+                    break; 
+        
+            }?></option>
+            <option value="1">até 18 anos</option>
+            <option value="2">de 19 até 23 anos</option>
+            <option value="3">de 24 até 28 anos</option>
+            <option value="4">de 29 até 33 anos</option>
+            <option value="5">de 34 até 38 anos</option>
+            <option value="6">de 39 até 43 anos</option>
+            <option value="7">de 44 até 48 anos</option>
+            <option value="8">de 49 até 53 anos</option>
+            <option value="9">de 54 até 58 anos</option>
+            <option value="10">mais de 59 anos</option>
     </select>
     </div>
     </div>
