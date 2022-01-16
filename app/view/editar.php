@@ -1,4 +1,4 @@
-    <?php //require('app/controller/conect.php');?>
+<?php //require('app/controller/conect.php');?>
 <?php require ('layout/heder.php');?>
 <?php require('app/controller/update_controller.php');?>
 
@@ -50,10 +50,10 @@
             <option value="Dependente">Dependente</option>
         </select>
     </div>
-        <div class="col-md-2">
+       <!-- <div class="col-md-2">
             <label>Idade:</label>
-            <input type="text" name="idade" id="senha" class="form-control" onkeypress="$(this).mask('#00');" value="<?php echo $o->pesquisa($id)['idade'];?>">
-        </div>
+            <input type="text" name="idade" id="senha" class="form-control" onkeypress="$(this).mask('#00');" value="<?php //echo $o->pesquisa($id)['idade'];?>">
+        </div>-->
     </div>
     <div class="row">
     <div class="col-md-2">
