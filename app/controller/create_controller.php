@@ -16,10 +16,10 @@ class create_controller{
     $baneficiario=$_POST['beneficiario'];
     $idade=$_POST['idade'];
     $adesao=$_POST ['adesao'];
-    $desconto=$_POST['desconto'];
+    $total=$_POST['total'];
     $faixa=$_POST['faixa'];
     $lista=new banco;
-    $total=$lista->read2($_POST['faixa']);
+    $desconto=$lista->read2($_POST['faixa']);
     //$total1=$total[0]['afinidade_basico'];
     $nascimento=$_POST['data_nascimento'];
     $faixa=$_POST['faixa'];
@@ -51,7 +51,7 @@ class create_controller{
 
 
     $cadastro= new banco();
-    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total[$tipo],$nascimento,$faixa);
+    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto[$tipo],$total,$nascimento,$faixa);
    
    }
 
