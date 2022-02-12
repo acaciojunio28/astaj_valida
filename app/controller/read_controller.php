@@ -21,7 +21,25 @@ public function tabela(){
     echo  "<th>" . $row ['matricula']. "</th>" ;
     echo  "<td>" . $row ['nome']. "</td>" ;
     echo  "<td>" . $row ['cpf']. "</td>" ;
-    echo  "<td>" . $row ['tipo_de_plano']. "</td>" ;
+    $list1=$row ['tipo_de_plano'];
+    switch ($list1) {
+        case 'afinidade_basico':
+            echo "<td>Afinidade Básico</td>" ;;
+            break;
+        case 'afinidade_pratico':
+            echo "<td>Afinidade Prático</td>";
+            break;
+        case 'afinidade_versatil':
+            echo "<td>Afinidade Versatil</td>";
+            break;
+        case 'afinidade_dinamico':
+                echo "<td> Afinidade Dinâmico</td>";
+            break;
+        case 'afinidade_lider':
+                echo "<td>Afinidade Lider</td>";
+            break;
+
+    }
     echo  "<td>" . $row ['beneficiario']. "</td>" ;
     echo  "<td>" . $row ['idade']. "</td>" ;
     echo  "<td>" . date('d/m/Y', strtotime($row['adesao'])). "</td>" ;
