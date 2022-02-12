@@ -43,10 +43,10 @@ class create_controller{
 
     //$idade=$_POST['idade'];
     $adesao=$_POST ['adesao'];
-    $desconto=$_POST['desconto'];
+    $total=$_POST['total'];
     $faixa=$_POST['faixa'];
     $lista=new banco;
-    $total=$lista->read2($_POST['faixa']);
+    $desconto=$lista->read2($_POST['faixa']);
     //$total1=$total[0]['afinidade_basico'];
     $faixa=$_POST['faixa'];
    if(empty($idade)){
@@ -77,7 +77,7 @@ class create_controller{
 
 
     $cadastro= new banco();
-    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total[$tipo],$nascimento,$faixa);
+    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto[$tipo],$total,$nascimento,$faixa);
    
    }
 
