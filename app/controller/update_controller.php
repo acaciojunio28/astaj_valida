@@ -56,7 +56,7 @@ elseif($mes==$mesnasc && $dia<=$dianasc){
 
    }
     
-$o-> update ( $matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total[$tipo],$nascimento,$faixa,$_POST['id']);
+$o-> update ( $matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto[$tipo],$total,$nascimento,$faixa,$_POST['id']);
  echo  "<script> console.log('Registro incluído com sucesso!'); document.location='/astaj_valida/listar';</script>" ;
     //header('Location: /astaj_valida/listar');
    
