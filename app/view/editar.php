@@ -33,7 +33,24 @@
     <div class="col-md-2 ">
         <label>Tipo:</label>
         <select name="tipo" class="form-control">
-        <option selected value="<?php echo $o->pesquisa($id)['tipo_de_plano'];?>"><?php echo $o->pesquisa($id)['tipo_de_plano'];?></option>
+        <option selected value="<?php echo $o->pesquisa($id)['tipo_de_plano'];?>"><?php $list=$o->pesquisa($id)['tipo_de_plano'];
+          switch ($list) {
+              case 'afinidade_basico':
+                  echo "<td>Afinidade Básico</td>" ;;
+                  break;
+              case 'afinidade_pratico':
+                  echo "<td>Afinidade Prático</td>";
+                  break;
+              case 'afinidade_versatil':
+                  echo "<td>Afinidade Versatil</td>";
+                  break;
+              case 'afinidade_dinamico':
+                      echo "<td> Afinidade Dinâmico</td>";
+                  break;
+              case 'afinidade_lider':
+                      echo "<td>Afinidade Lider</td>";
+                  break;
+                  }?></option>
         <option value="afinidade_basico"> Afinidade Básico </option>
         <option value="afinidade_pratico"> Afinidade Prático</option>
         <option value="afinidade_versatil"> Afinidade Versatil</option>
