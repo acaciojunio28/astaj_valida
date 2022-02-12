@@ -25,10 +25,10 @@ $cpf=$_POST['cpf'];
 $tipo=$_POST['tipo'];
 $baneficiario=$_POST['beneficiario'];
 $adesao=$_POST ['adesao'];
-$desconto=$_POST['desconto'];
+$total=$_POST['total'];
 $faixa=$_POST['faixa'];
 $lista=new banco();
-$total=$lista->read2($_POST['faixa']);
+$desconto=$lista->read2($_POST['faixa']);
 $nascimento=$_POST['data_nascimento'];
 
     //Data atual
