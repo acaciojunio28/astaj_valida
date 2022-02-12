@@ -79,7 +79,7 @@ public function tabela(){
     $mesnasc = $data[1];
     $anonasc = $data[0];
 
-    //Calculando sua idade
+    //Calculando sua idade.
     $idade = $ano - $anonasc;
     
     if ($mes <  $mesnasc){
@@ -91,22 +91,85 @@ public function tabela(){
     $idade--;
 
     }
-
+    //Fim calculo idade.
+    
     $idade1 = $ano - $anonasc;
 
     if (empty($row['faixa_etaria'])){
         echo "<td></td>";
+    }    elseif ($row['faixa_etaria']==1 && $idade<=$D[0]["maximo"]) {
+    
+        if(($idade1>$D[0]["maximo"]) && ($mes == ($mesnasc-1) || $mes == $mesnasc )){
+
+            echo "<td class='bg-warning'>Atenção</td>";}
+
+        else{echo "<td class='bg-success'>OK</td>";}
     }
-    elseif($row['faixa_etaria']==1 && $idade>$D[0]["maximo"]){
-        echo "<td class='bg-danger'> Vencido </td>";
-    }else{
-        //validar atenção
-        if($idade==$D[0]["maximo"] && ($mes == ($mesnasc))){
-            echo "<td class='bg-warning'>Atenção</td>";
-        }else{
-            echo "<td class='bg-success'>OK</td>";
+    
+    elseif ($row['faixa_etaria']==2 && $idade>$D[1]["minimo"] && $idade<=$D[1]["maximo"]) {
+        if(($idade1>$D[1]["maximo"]) && ($mes == ($mesnasc-1) || $mes == $mesnasc) ){
+
+            echo "<td class='bg-warning'>Atenção</td>";}
+
+        else{echo "<td class='bg-success'>OK</td>";}
         }
-    }
+
+        elseif ($row['faixa_etaria']==3 && $idade>$D[2]["minimo"] && $idade<=$D[2]["maximo"]) {
+            if(($idade1>$D[2]["maximo"]) && ($mes == ($mesnasc-1) || $mes == $mesnasc) ){
+    
+                echo "<td class='bg-warning'>Atenção</td>";}
+    
+            else{echo "<td class='bg-success'>OK</td>";}
+        }
+            elseif ($row['faixa_etaria']==4 && $idade>$D[3]["minimo"] && $idade<=$D[3]["maximo"]) {
+                if(($idade1>$D[3]["maximo"]) && ($mes == ($mesnasc-1) || $mes == $mesnasc) ){
+        
+                    echo "<td class='bg-warning'>Atenção</td>";}
+        
+                else{echo "<td class='bg-success'>OK</td>";}
+            }
+            elseif ($row['faixa_etaria']==5 && $idade>$D[4]["minimo"] && $idade<=$D[4]["maximo"]) {
+                    if(($idade1>$D[4]["maximo"]) && ($mes == ($mesnasc-1) || $mes == $mesnasc) ){
+            
+                        echo "<td class='bg-warning'>Atenção</td>";}
+            
+                    else{echo "<td class='bg-success'>OK</td>";}
+            }
+            elseif ($row['faixa_etaria']==6 && $idade>$D[5]["minimo"] && $idade<=$D[5]["maximo"]) {
+                    if(($idade1>$D[5]["maximo"]) && ($mes == ($mesnasc-1) || $mes == $mesnasc) ){
+                
+                            echo "<td class='bg-warning'>Atenção</td>";}
+                
+                     else{echo "<td class='bg-success'>OK</td>";}
+            }
+            elseif ($row['faixa_etaria']==7 && $idade>$D[6]["minimo"] && $idade<=$D[6]["maximo"]) {
+                    if(($idade1>$D[6]["maximo"]) && ($mes == ($mesnasc-1) || $mes == $mesnasc) ){
+                
+                            echo "<td class='bg-warning'>Atenção</td>";}
+                
+                    else{echo "<td class='bg-success'>OK</td>";}
+            }
+            elseif ($row['faixa_etaria']==8 && $idade>$D[7]["minimo"] && $idade<=$D[7]["maximo"]) {
+                     if(($idade1>$D[7]["maximo"]) && ($mes == ($mesnasc-1) || $mes == $mesnasc) ){
+                
+                            echo "<td class='bg-warning'>Atenção</td>";}
+                
+                    else{echo "<td class='bg-success'>OK</td>";}
+                
+            } 
+            elseif ($row['faixa_etaria']==9 && $idade>$D[8]["minimo"] && $idade<=$D[8]["maximo"]) {
+                if(($idade1>$D[8]["maximo"]) && ($mes == ($mesnasc-1) || $mes == $mesnasc) ){
+        
+                    echo "<td class='bg-warning'>Atenção</td>";}
+        
+                else{echo "<td class='bg-success'>OK</td>";}
+            }
+    elseif ($row['faixa_etaria']==10 && $idade>$D[9]["maximo"]) {
+        echo "<td class='bg-success'>OK</td>";
+    }else{
+        echo "<td class='bg-danger'> Vencido </td>";
+    }  
+
 
     
     echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
