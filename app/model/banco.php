@@ -26,7 +26,9 @@ class banco{
    
     }
     public function read(){
-        $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro where ativo='s'");
+        //$verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro where ativo='s'");
+        $verificar=mysqli_query($this->mysql,"SELECT *, (select sum(desconto) from astaje_valida_cadastro t2 where t2.matricula = t1.matricula) as desconto_total FROM astaje_valida_cadastro t1 where ativo='s'");
+
         while($row=mysqli_fetch_array($verificar)) {
             $array[]=$row;
         }
