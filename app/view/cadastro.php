@@ -38,10 +38,10 @@
             <option value="Dependente">Dependente</option>
         </select>
     </div>
-        <div class="col-md-2">
+        <!--<div class="col-md-2">
             <label>Idade:</label>
             <input type="text" minlength="0" maxlength="3" name="idade" id="senha" class="form-control" onkeypress="$(this).mask('#00');">
-        </div>
+        </div>-->
     </div>
     <div class="row">
     <div class="col-md-2">

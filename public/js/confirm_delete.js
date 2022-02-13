@@ -5,7 +5,7 @@
  
         //solicitar confirmação
         
-        var confirmacao = confirm('Deseja realmente excluir?', 'Title is optional');
+        var confirmacao = confirm('Deseja realmente desativar? Todos os cadastros com a mesma matrícula também serão desativados.', 'Title is optional');
 
         //se confirmação for positiva chamar url app/controller/delete_controller.php
         if (confirmacao == true){

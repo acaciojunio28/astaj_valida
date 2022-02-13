@@ -26,7 +26,9 @@ class banco{
    
     }
     public function read(){
-        $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro");
+        //$verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro where ativo='s'");
+        $verificar=mysqli_query($this->mysql,"SELECT *, replace( (select sum(replace(desconto, \",\", \".\")) from astaje_valida_cadastro t2 where t2.matricula = t1.matricula), \".\", \",\") as desconto_total FROM astaje_valida_cadastro t1 where ativo='s'");
+
         while($row=mysqli_fetch_array($verificar)) {
             $array[]=$row;
         }
@@ -51,7 +53,10 @@ class banco{
         mysqli_query($this->mysql,"UPDATE astaje_valida_cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',beneficiario='$baneficiario',idade='$idade',adesao='$adesao',desconto='$desconto',desconto_total='$total',data_nascimento='$nascimento',faixa_etaria='$faixa' WHERE id='$id'");
     }
     public function delete($id){
-        mysqli_query($this->mysql,"DELETE FROM astaje_valida_cadastro WHERE id='$id'");
+        //mysqli_query($this->mysql,"DELETE FROM astaje_valida_cadastro WHERE id='$id'");
+        mysqli_query(
+            $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='n' WHERE matricula='$id'"
+        );
     }
     public function login($login,$senha){
 
