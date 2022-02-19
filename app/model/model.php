@@ -16,6 +16,9 @@ class model{
 
     }
 
-  
+    public function update($faixa,$tipo,$valor){
+    mysqli_query($this->mysql,"UPDATE astaje_tipo SET $tipo='$valor' WHERE faixa_etaria='$faixa'");
+    }
+   
 }
 
