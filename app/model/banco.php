@@ -52,11 +52,17 @@ class banco{
     public function update($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total,$nascimento,$faixa,$id){
         mysqli_query($this->mysql,"UPDATE astaje_valida_cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',beneficiario='$baneficiario',idade='$idade',adesao='$adesao',desconto='$desconto',desconto_total='$total',data_nascimento='$nascimento',faixa_etaria='$faixa' WHERE id='$id'");
     }
-    public function delete($id){
+    public function delete($id,$matricula,$beneficiario){
         //mysqli_query($this->mysql,"DELETE FROM astaje_valida_cadastro WHERE id='$id'");
-        mysqli_query(
-            $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='n' WHERE matricula='$id'"
-        );
+        if ($beneficiario == "T"){
+            mysqli_query(
+                $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='n' WHERE matricula='$matricula'"
+            );
+        }else{
+            mysqli_query(
+                $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='n' WHERE id='$id'"
+            );
+        }
     }
     public function login($login,$senha){
 

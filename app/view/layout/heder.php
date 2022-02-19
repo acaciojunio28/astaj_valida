@@ -23,11 +23,14 @@
 </a>
   <div class="cotainer" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto ">
-      <li class="nav-item active">
-        <a class="nav-link text-white" href="/astaj_valida/cadastro">Cadastrar</a>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/astaj_valida/listar">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="/astaj_valida/listar">Listar</a>
+        <a class="nav-link text-white" href="/astaj_valida/relatorio">Relatório</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="/astaj_valida/configuracao">Configuração</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="/astaj_valida/import-csv">Importar</a>
