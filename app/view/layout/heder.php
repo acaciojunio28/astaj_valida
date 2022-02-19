@@ -36,6 +36,9 @@
         <a class="nav-link text-white" href="/astaj_valida/import-csv">Importar</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link text-white" href="/astaj_valida/faixaetaria">Configuração</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link text-white" href="app/controller/sair.php">Sair</a>
       </li>
     </ul>
