@@ -30,12 +30,13 @@
         <option value="afinidade_lider"> Afinidade Lider </option>
       </select>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
     <label>Beneficiario:</label>
         <select name="beneficiario" class="form-control">
             <option selected>Escolher</option>
-            <option value="Titular">Titular</option>
-            <option value="Dependente">Dependente</option>
+            <option value="T">T</option>
+            <option value="D">D</option>
+            <option value="A">A</option>
         </select>
     </div>
         <!--<div class="col-md-2">
