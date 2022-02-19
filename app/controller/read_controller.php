@@ -1,5 +1,6 @@
 <?php
 require('app/model/banco.php');
+require('user_case/desconto.php');
 
 class read_controller{
 
@@ -44,7 +45,10 @@ public function tabela(){
     echo  "<td>" . $row ['idade']. "</td>" ;
     echo  "<td>" . date('d/m/Y', strtotime($row['adesao'])). "</td>" ;
     echo  "<td>" . $row ['desconto']. "</td>" ;
-    echo  "<td>" . $row ['desconto_total']. "</td>" ;
+    // Desconto total apenas para Titular.
+    $desconto_total = new DescontoTotal();
+    $desconto_total_titular = $desconto_total->desconto_apenas_titular($row['desconto_total'], $row['beneficiario']);
+    echo  "<td>" . $desconto_total_titular . "</td>" ;
     echo  "<td>" . date('d/m/Y', strtotime($row['data_nascimento'])). "</td>" ;
     $list=$row ['faixa_etaria'];
     switch ($list) {
@@ -191,9 +195,9 @@ public function tabela(){
 
     
     echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
-    $row['id']."'> <i class='fas fa-edit'></i> </a> <a class='btn btn-danger'href='#'" .
-    "onClick='delete_user(" . $row['matricula'] . ")'>  <i class='fas fa-trash-alt'></i> </a></td>";
-    echo  "</td>" ;
+    $row['id']."'> <i class='fas fa-edit' title='Editar'></i> </a> <a class='btn btn-danger'href='#'" .
+    "onClick='delete_user(" . $row['id'] . "," . $row['matricula'] . ",\"" . $row['beneficiario'] . "\")'>  <i class='fa fa-archive' title='Inativar'></i> </a></td>";
+    echo  "</td>";
     }
         
            }
