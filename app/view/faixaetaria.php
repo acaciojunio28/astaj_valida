@@ -1,4 +1,28 @@
 <?php require('layout/heder.php');?>
+<?php require('app/controller/faixalist_controller.php');?>
+
+</div>
+
+<table border="1" class="table table-hover " id="tabela">
+<thead>
+<tr class="table-dark">
+    <th>Faixa etaria</th>
+    <th>Afinidade Básico</th>
+    <th>Afinidade Dinâmico</th>
+    <th>Afinidade Versatil</th>
+    <th>Afinidade Prático</th>
+    <th>Afinidade Lider</th>   
+</tr>
+</thead>
+<tbody id="myTable">
+
+<?php new faixalist_controller() ?>
+
+</tbody>
+</table>
+</div>
+
+
 <div id="cadastro">
 <form method="POST" action="app/controller/faixa_controller.php">
 <div class="row">
