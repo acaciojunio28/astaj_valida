@@ -52,10 +52,11 @@ public function __construct(){
             break; }
 
             echo  "<th>" . $row ['afinidade_basico']. "</th>" ;
-            echo  "<th>" . $row ['afinidade_dinamico']. "</th>" ;
+            echo  "<th>" . $row ['plano_gold']. "</th>" ;
             echo  "<th>" . $row ['afinidade_versatil']. "</th>" ;
             echo  "<th>" . $row ['afinidade_pratico']. "</th>" ;
-            echo  "<th>" . $row ['afinidade_lider']. "</th>" ;
+            echo  "<th>" . $row ['pleno_platinum']. "</th>" ;
+            echo  "<th>" . $row ['pleno_diamond']. "</th>" ;
             
     }
     }

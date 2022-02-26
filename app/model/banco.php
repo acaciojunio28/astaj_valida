@@ -24,13 +24,21 @@ class banco{
         
     mysqli_query($this->mysql,"INSERT INTO astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,idade,adesao,desconto,desconto_total,data_nascimento,faixa_etaria) VALUES ('$matricula','$nome','$cpf','$tipo','$beneficiario','$idade','$adesao','$desconto','$total','$nascimento','$faixa')");
    
+    } 
+    public function np(){
+        $quantidade = 2;
+        $tr = mysqli_num_rows(mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro where ativo='s'"));
+        $tp=$tr/$quantidade;
+        return $tp;
     }
-    public function read(){
-        //$verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro where ativo='s'");
+    public function read($pagina){
+        $quantidade = 2;
+        //Calcula a pagina de qual valor será exibido
+        $inicio     = ($quantidade * $pagina) - $quantidade;
         $verificar=mysqli_query($this->mysql,"SELECT *, 
             replace( (select sum(replace(desconto, \",\", \".\")) 
             from astaje_valida_cadastro t2 where t2.matricula = t1.matricula), \".\", \",\") as desconto_total 
-            FROM astaje_valida_cadastro t1 where ativo='s'");
+            FROM astaje_valida_cadastro t1 where ativo='s' LIMIT $inicio, $quantidade");
 
         while($row=mysqli_fetch_array($verificar)) {
             $array[]=$row;

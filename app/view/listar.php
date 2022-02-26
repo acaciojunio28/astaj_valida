@@ -44,9 +44,38 @@
 </thead>
 <tbody id="myTable">
 
-<?php new read_controller() ?>
+<?php 
+$pagina  = (isset($_GET['pagina'])) ? (int)$_GET['pagina'] : 1;
+new read_controller($pagina) ?>
 
 </tbody>
 </table>
+<div class="row" id="pagina">
+<div class="col-md-1">
+<?php
+if($pagina!=1){
+?>
+<ul class='pagination'>
+<li class='page-item'><a class='page-link 1' href="/astaj_valida/listar?pagina=<?php 
+echo $pagina-1;?>">Anterior</a></li></ul>
+<?php
+}
+?>
+</div>
+ <div class="col-md-1" id="id">
+<?php
+if($pagina<=$NP){
+?>
+<ul class='pagination'>
+<li class='page-item'><a class='page-link ' href="/astaj_valida/listar?pagina=<?php 
+echo $pagina+1;?>">Posterior </a></li></ul>
+<?php
+}
+?>
+</div>
+</div>
+</div>
+
+
 </div>
 <?php include ('layout/footer.php'); ?>

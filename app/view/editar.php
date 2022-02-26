@@ -44,18 +44,21 @@
               case 'afinidade_versatil':
                   echo "<td>Afinidade Versatil</td>";
                   break;
-              case 'afinidade_dinamico':
-                      echo "<td> Afinidade Dinâmico</td>";
+              case 'plano_gold':
+                      echo "<td> Plano Gold</td>";
                   break;
-              case 'afinidade_lider':
-                      echo "<td>Afinidade Lider</td>";
+              case 'pleno_platinum':
+                      echo "<td>Pleno Platinum</td>";
+                case 'pleno_diamond':
+                 echo "<td>Pleno Diamond</td>";
                   break;
                   }?></option>
-        <option value="afinidade_basico"> Afinidade Básico </option>
+       <option value="afinidade_basico"> Afinidade Básico </option>
         <option value="afinidade_pratico"> Afinidade Prático</option>
         <option value="afinidade_versatil"> Afinidade Versatil</option>
-        <option value="afinidade_dinamico"> Afinidade Dinâmico</option>
-        <option value="afinidade_lider"> Afinidade Lider </option>
+        <option value="plano_gold"> Plano Gold</option>
+        <option value="pleno_platinum"> Pleno Platinum </option>
+        <option value="pleno_diamond"> Pleno Diamond</option>
 
       </select>
     </div>

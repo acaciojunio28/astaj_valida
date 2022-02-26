@@ -26,8 +26,9 @@
         <option value="afinidade_basico"> Afinidade Básico </option>
         <option value="afinidade_pratico"> Afinidade Prático</option>
         <option value="afinidade_versatil"> Afinidade Versatil</option>
-        <option value="afinidade_dinamico"> Afinidade Dinâmico</option>
-        <option value="afinidade_lider"> Afinidade Lider </option>
+        <option value="plano_gold"> Plano Gold</option>
+        <option value="pleno_platinum"> Pleno Platinum </option>
+        <option value="pleno_diamond"> Pleno Diamond</option>
       </select>
     </div>
     <div class="col-md-1">
