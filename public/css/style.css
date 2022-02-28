@@ -19,7 +19,13 @@
     background-color: #3e5f8a !important;
 }
 #logo{
-    /**width: 200px;**/
-    height: 150px;
+    width: 100%;
+    position: relative;
     margin-bottom: 0px;
+}
+#pagina{
+    margin-left:550px;
+}
+#id{
+margin-left:20px;
 }

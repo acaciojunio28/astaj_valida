@@ -17,30 +17,34 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg  navbar-light bg-primary2 shadow p-3 mb-5" id="nav">
+<nav class="navbar navbar-expand-lg  navbar-light bg-white shadow p-3 mb-5" id="nav">
 <a class="navbar-brand" href="#">
- 
+<img src="public/img/imagem.jfif" width="170" height="70" alt="">
 </a>
   <div class="cotainer" id="conteudoNavbarSuportado">
     <ul class="navbar-nav mr-auto ">
       <li class="nav-item">
-        <a class="nav-link text-white" href="/astaj_valida/listar">Home</a>
+        <a class="nav-link text-dark" href="/astaj_valida/listar">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="/astaj_valida/relatorio">Relatório</a>
+        <a class="nav-link text-dark" href="/astaj_valida/relatorio">Relatório</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="/astaj_valida/configuracao">Configuração</a>
+        <a class="nav-link text-dark" href="/astaj_valida/configuracao">Configuração</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="/astaj_valida/import-csv">Importar</a>
+        <a class="nav-link text-dark" href="/astaj_valida/import-csv">Importar</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="/astaj_valida/faixaetaria">Configuração</a>
+        <a class="nav-link text-dark" href="/astaj_valida/faixaetaria">Configuração</a>
       </li>
+      <div class="row justify-content-end">
       <li class="nav-item">
-        <a class="nav-link text-white" href="app/controller/sair.php">Sair</a>
+        <a class="nav-link text-dark " href="app/controller/sair.php">
+        <img src="public/img/sair.png" width="30" height="30" alt="Sair" >
+        </a>
       </li>
+     </div>
     </ul>
   </div>
 </nav>
