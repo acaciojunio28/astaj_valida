@@ -6,13 +6,13 @@ class read_controller{
 
 private $lista;
 
-public function __construct(){
+public function __construct($pagina){
 
     $this->lista=new banco;
-    $this->tabela();
+    $this->tabela($pagina);
 }
-public function tabela(){
-    $C=$this->lista->read();
+public function tabela($pagina){
+    $C=$this->lista->read($pagina);
     $D=$this->lista->read1();
 
     foreach ($C as $row) {
@@ -33,11 +33,13 @@ public function tabela(){
         case 'afinidade_versatil':
             echo "<td>Afinidade Versatil</td>";
             break;
-        case 'afinidade_dinamico':
-                echo "<td> Afinidade Dinâmico</td>";
+        case 'plano_gold':
+                echo "<td> Plano Gold</td>";
             break;
-        case 'afinidade_lider':
-                echo "<td>Afinidade Lider</td>";
+        case 'pleno_platinum':
+                echo "<td>Pleno Platinum</td>";
+        case 'pleno_diamond':
+                 echo "<td>Pleno Diamond</td>";
             break;
 
     }
@@ -199,10 +201,10 @@ public function tabela(){
     "onClick='delete_user(" . $row['id'] . "," . $row['matricula'] . ",\"" . $row['beneficiario'] . "\")'>  <i class='fa fa-archive' title='Inativar'></i> </a></td>";
     echo  "</td>";
     }
-        
-           }
-
 
 }
 
-   
+
+}
+$C=new banco;
+$NP=$C->np();

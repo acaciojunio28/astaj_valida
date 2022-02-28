@@ -1,4 +1,29 @@
 <?php require('layout/heder.php');?>
+<?php require('app/controller/faixalist_controller.php');?>
+
+</div>
+
+<table border="1" class="table table-hover " id="tabela">
+<thead>
+<tr class="table-dark">
+    <th>Faixa etaria</th>
+    <th>Afinidade Básico</th>
+    <th>Plano Gold</th>
+    <th>Afinidade Versatil</th>
+    <th>Afinidade Prático</th>
+    <th>Pleno Platinum</th>   
+    <th>Pleno Diamond</th> 
+</tr>
+</thead>
+<tbody id="myTable">
+
+<?php new faixalist_controller() ?>
+
+</tbody>
+</table>
+</div>
+
+
 <div id="cadastro">
 <form method="POST" action="app/controller/faixa_controller.php">
 <div class="row">
@@ -25,8 +50,9 @@
         <option value="afinidade_basico"> Afinidade Básico </option>
         <option value="afinidade_pratico"> Afinidade Prático</option>
         <option value="afinidade_versatil"> Afinidade Versatil</option>
-        <option value="afinidade_dinamico"> Afinidade Dinâmico</option>
-        <option value="afinidade_lider"> Afinidade Lider </option>
+        <option value="plano_gold"> Plano Gold</option>
+        <option value="pleno_platinum"> Pleno Platinum </option>
+        <option value="pleno_diamond"> Pleno Diamond</option>
       </select>
     </div>
     <div class="col-md-2">
