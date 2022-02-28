@@ -29,9 +29,7 @@
       <li class="nav-item">
         <a class="nav-link text-dark" href="/astaj_valida/relatorio">Relatório</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="/astaj_valida/configuracao">Configuração</a>
-      </li>
+      
       <li class="nav-item">
         <a class="nav-link text-dark" href="/astaj_valida/import-csv">Importar</a>
       </li>
