@@ -37,7 +37,7 @@ class banco{
         $inicio     = ($quantidade * $pagina) - $quantidade;
         $verificar=mysqli_query($this->mysql,"SELECT *, 
             replace( (select sum(replace(desconto, \",\", \".\")) 
-            from astaje_valida_cadastro t2 where t2.matricula = t1.matricula), \".\", \",\") as desconto_total 
+            from astaje_valida_cadastro t2 where t2.matricula = t1.matricula and t2.ativo='s'), \".\", \",\") as desconto_total 
             FROM astaje_valida_cadastro t1 where ativo='s' LIMIT $inicio, $quantidade");
 
         while($row=mysqli_fetch_array($verificar)) {
