@@ -192,7 +192,7 @@ public function tabela(){
         echo "<td class='bg-danger'> <p class='text-light'>Vencido</p> </td>";
     }  
 
-
+    echo("<td>" . $row['ativo'] . "</td>");
     
     echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
     $row['id']."'> <i class='fas fa-edit' title='Editar'></i> </a> <a class='btn btn-danger'href='#'" .

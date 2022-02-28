@@ -39,6 +39,7 @@
     <th>Data de Nascimento</th>
     <th>faixa etaria</th>
     <th>Situação</th>
+    <th>Status</th>
     <th></th>
 </tr>
 </thead>
