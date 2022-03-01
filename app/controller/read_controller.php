@@ -198,7 +198,9 @@ public function tabela($pagina){
     
     echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
     $row['id']."'> <i class='fas fa-edit' title='Editar'></i> </a> <a class='btn btn-danger'href='#'" .
-    "onClick='delete_user(" . $row['id'] . "," . $row['matricula'] . ",\"" . $row['beneficiario'] . "\")'>  <i class='fa fa-archive' title='Inativar'></i> </a></td>";
+    "onClick='delete_user(" . $row['id'] . "," . $row['matricula'] . ",\"" . $row['beneficiario'] . "\"" . 
+    ", \"" . $row['ativo'] . "\"" .
+    ")'> <i class='fa fa-archive' title='Inativar'></i> </a></td>";
     echo  "</td>";
     }
 
