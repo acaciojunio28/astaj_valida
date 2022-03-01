@@ -20,6 +20,11 @@
 
 <div class="col-md-3 mb-2 ">
     <input type="text" class="form-control" id="search" placeholder="Buscar">
+
+</div>
+<div  class="col-md-1">
+    <input type="checkbox" id="showInativos" name="showInativos" value="Inativo" checked>
+        <label for="showInativos">Inativos</label>
 </div>
 </div>
 
@@ -39,6 +44,7 @@
     <th>Data de Nascimento</th>
     <th>faixa etaria</th>
     <th>Situação</th>
+    <th>Status</th>
     <th></th>
 </tr>
 </thead>

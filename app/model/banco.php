@@ -26,19 +26,19 @@ class banco{
    
     } 
     public function np(){
-        $quantidade = 2;
-        $tr = mysqli_num_rows(mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro where ativo='s'"));
+        $quantidade = 10;
+        $tr = mysqli_num_rows(mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro "));
         $tp=$tr/$quantidade;
         return $tp;
     }
     public function read($pagina){
-        $quantidade = 2;
+        $quantidade = 10;
         //Calcula a pagina de qual valor será exibido
-        $inicio     = ($quantidade * $pagina) - $quantidade;
+        $inicio = ($quantidade * $pagina) - $quantidade;
         $verificar=mysqli_query($this->mysql,"SELECT *, 
             replace( (select sum(replace(desconto, \",\", \".\")) 
-            from astaje_valida_cadastro t2 where t2.matricula = t1.matricula), \".\", \",\") as desconto_total 
-            FROM astaje_valida_cadastro t1 where ativo='s' LIMIT $inicio, $quantidade");
+            from astaje_valida_cadastro t2 where t2.matricula = t1.matricula and t2.ativo='Ativo'), \".\", \",\") as desconto_total 
+            FROM astaje_valida_cadastro t1 LIMIT $inicio, $quantidade");
 
         while($row=mysqli_fetch_array($verificar)) {
             $array[]=$row;
@@ -67,13 +67,18 @@ class banco{
         //mysqli_query($this->mysql,"DELETE FROM astaje_valida_cadastro WHERE id='$id'");
         if ($beneficiario == "T"){
             mysqli_query(
-                $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='n' WHERE matricula='$matricula'"
+                $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='Inativo' WHERE matricula='$matricula'"
             );
         }else{
             mysqli_query(
-                $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='n' WHERE id='$id'"
+                $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='Inativo' WHERE id='$id'"
             );
         }
+    }
+    public function ativar_db($id){
+        mysqli_query(
+            $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='Ativo' WHERE id='$id'"
+        );
     }
     public function login($login,$senha){
 
