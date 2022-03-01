@@ -27,7 +27,7 @@ class banco{
     } 
     public function np(){
         $quantidade = 10;
-        $tr = mysqli_num_rows(mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro"));
+        $tr = mysqli_num_rows(mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastrog"));
         $tp=$tr/$quantidade;
         return $tp;
     }
