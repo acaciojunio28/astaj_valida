@@ -17,12 +17,12 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg  navbar-light bg-white shadow p-3 mb-5" id="nav">
+<nav class="navbar navbar-expand-lg shadow p-3 navbar-light" id="nav">
 <a class="navbar-brand" href="#">
 <img src="public/img/imagem.jfif" width="170" height="70" alt="">
 </a>
-  <div class="cotainer" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto ">
+  <div class="container-fluid" >
+    <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link text-dark" href="/astaj_valida/listar">Home</a>
       </li>
@@ -36,15 +36,15 @@
       <li class="nav-item">
         <a class="nav-link text-dark" href="/astaj_valida/faixaetaria">Configuração</a>
       </li>
-      <div class="row justify-content-end">
+</ul>
+   <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <a class="nav-link text-dark " href="app/controller/sair.php">
+            <a class="nav-link text-dark " href="app/controller/sair.php">
         <img src="public/img/sair.png" width="30" height="30" alt="Sair" >
         </a>
-      </li>
-     </div>
-    </ul>
-  </div>
+        </li>
+        </ul>
+</div>
 </nav>
 
     
