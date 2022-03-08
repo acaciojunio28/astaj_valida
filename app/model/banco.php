@@ -20,9 +20,9 @@ class banco{
     //mysqli_query($this->mysql,"INSERT INTO cadastro (matricula,nome,cpf,'tipo de plano',beneficiário,idade,adesão,desconto,'desconto total') VALUES ('$matricula','$nome','$cpf','$tipo','$baneficiario','$idade','$adesao','$desconto','$total')");
    
    // }
-   public function create($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$desconto,$total,$nascimento,$faixa){
+   public function create($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$desconto,$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado){
         
-    mysqli_query($this->mysql,"INSERT INTO astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,idade,adesao,desconto,desconto_total,data_nascimento,faixa_etaria) VALUES ('$matricula','$nome','$cpf','$tipo','$beneficiario','$idade','$adesao','$desconto','$total','$nascimento','$faixa')");
+    mysqli_query($this->mysql,"INSERT INTO astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,idade,adesao,desconto,data_nascimento,faixa_etaria,telefone,cep,rua,numero,bairro,cidade,estado) VALUES ('$matricula','$nome','$cpf','$tipo','$beneficiario','$idade','$adesao','$desconto','$nascimento','$faixa','$telefone','$cep','$rua','$numero','$bairro','$cidade','$estado')");
    
     } 
     public function np(){
@@ -60,8 +60,8 @@ class banco{
         $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro WHERE id='$id'");
        return mysqli_fetch_assoc($verificar);
             }
-    public function update($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$total,$nascimento,$faixa,$id){
-        mysqli_query($this->mysql,"UPDATE astaje_valida_cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',beneficiario='$baneficiario',idade='$idade',adesao='$adesao',desconto='$desconto',desconto_total='$total',data_nascimento='$nascimento',faixa_etaria='$faixa' WHERE id='$id'");
+    public function update($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado,$id){
+        mysqli_query($this->mysql,"UPDATE astaje_valida_cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',beneficiario='$baneficiario',idade='$idade',adesao='$adesao',desconto='$desconto',data_nascimento='$nascimento',faixa_etaria='$faixa',telefone='$telefone',cep='$cep',rua='$rua',numero='$numero',bairro='$bairro',cidade='$cidade',estado='$estado' WHERE id='$id'");
     }
     public function delete($id,$matricula,$beneficiario){
         //mysqli_query($this->mysql,"DELETE FROM astaje_valida_cadastro WHERE id='$id'");
@@ -108,6 +108,6 @@ class banco{
    
     }
 }
-//$c=new banco();
+$c=new banco();
 //$c->create(12332,'junio',123655,'trarar','nnn',25,'nora',12,1253);
-//$c->update(123546,'joao',2354,'tata','mmm',15,'nora',12,23);
+//$c->update(123,"joao",123456,"bonus","T",36,1566666,15222,15-05-96,"vvvv",33333,6666,"ssul",15,"nobre","ba","df",107);

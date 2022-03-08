@@ -5,7 +5,6 @@
 
 
 <div>
-
 <div class="row">
 <div class="col-md-1">
 
@@ -82,6 +81,105 @@ echo $pagina+1;?>">Posterior </a></li></ul>
 </div>
 </div>
 
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
 
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"><?php echo $C->pesquisa($id)['nome'];?></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <p>Matrícula: <?php 
+        $dados = $C->pesquisa($id)['matricula'];
+        echo($dados);
+        if(is_null($dados) || $dados=="" || $dados==" "){
+          echo "em branco";
+        }else{
+          echo "<script>show_modal();</script>";
+        };
+      ?></p> 
+      <div class="row">
+      <div class="col-md-5">
+      <p>CPF: <?php echo $C->pesquisa($id)['cpf'];?></p>
+      </div>
+      <div class="col-md-7">
+      <p>Tipo de Plano: <?php $list=$C->pesquisa($id)['tipo_de_plano'];
+      switch ($list) {
+        case 'afinidade_basico':
+            echo "<td>Afinidade Básico</td>" ;;
+            break;
+        case 'afinidade_pratico':
+            echo "<td>Afinidade Prático</td>";
+            break;
+        case 'afinidade_versatil':
+            echo "<td>Afinidade Versatil</td>";
+            break;
+        case 'plano_gold':
+                echo "<td> Plano Gold</td>";
+            break;
+        case 'pleno_platinum':
+                echo "<td>Pleno Platinum</td>";
+          case 'pleno_diamond':
+           echo "<td>Pleno Diamond</td>";
+            break;
+            }?></p>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-md-5">
+      <p>Beneficiario: <?php echo $C->pesquisa($id)['beneficiario'];?></p>
+      </div>
+      <div class="col-md-6">
+      <p>Adesão: <?php echo date('d/m/Y', strtotime($C->pesquisa($id)['adesao']));?></p> 
+      </div>
+        </div>
+        <div class="row">
+      <div class="col-md-5">
+      <p>Status: <?php echo $C->pesquisa($id)['ativo'];?></p>
+      </div>
+      <div class="col-md-6">
+      <p>Nascimento: <?php echo date('d/m/Y', strtotime($C->pesquisa($id)['data_nascimento']));?></p> 
+      </div>
+        </div>
+        <div class="row">
+      <div class="col-md-5">
+      <p>Telefone: <?php echo $C->pesquisa($id)['telefone'];?></p>
+      </div>
+      <div class="col-md-6">
+      <p>Cep: <?php echo $C->pesquisa($id)['cep'];?></p> 
+      </div>
+        </div>
+        <div class="row">
+      <div class="col-md-5">
+      <p>Rua: <?php echo $C->pesquisa($id)['rua'];?></p>
+      </div>
+      <div class="col-md-6">
+      <p>Numero: <?php echo $C->pesquisa($id)['numero'];?></p> 
+      </div>
+        </div>
+        <div class="row">
+      <div class="col-md-5">
+      <p>Bairro: <?php echo $C->pesquisa($id)['bairro'];?></p>
+      </div>
+      <div class="col-md-7">
+      <p>Cidade: <?php echo $C->pesquisa($id)['cidade'];?>-<?php echo $C->pesquisa($id)['estado'];?></p>
+      </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+      </div>
+
+    </div>
+  </div>
 </div>
+<script>
+</script>
+
 <?php include ('layout/footer.php'); ?>

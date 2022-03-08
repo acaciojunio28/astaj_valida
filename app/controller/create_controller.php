@@ -13,6 +13,13 @@ class create_controller{
     $nome=$_POST['nome'];
     $cpf=$_POST['cpf'];
     $tipo=$_POST['tipo'];
+    $telefone=$_POST['telefone'];
+    $cep=$_POST['cep'];
+    $rua=$_POST['rua'];
+    $numero=$_POST['numero'];
+    $bairro=$_POST['bairro'];
+    $cidade=$_POST['cidade'];
+    $estado=$_POST['estado'];
     $baneficiario=$_POST['beneficiario'];
     $nascimento=$_POST['data_nascimento'];
          //Data atual
@@ -43,7 +50,7 @@ class create_controller{
 
     //$idade=$_POST['idade'];
     $adesao=$_POST ['adesao'];
-    $total=$_POST['total'];
+   // $total=$_POST['total'];
     $faixa=$_POST['faixa'];
     $lista=new banco;
     $desconto=$lista->read2($_POST['faixa']);
@@ -77,7 +84,8 @@ class create_controller{
 
 
     $cadastro= new banco();
-    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto[$tipo],$total,$nascimento,$faixa);
+    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto[$tipo],$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado
+   );
    
    }
 

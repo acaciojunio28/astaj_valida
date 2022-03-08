@@ -197,16 +197,21 @@ public function tabela($pagina){
     echo("<td>" . $row['ativo'] . "</td>");
     
     echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
-    $row['id']."'> <i class='fas fa-edit' title='Editar'></i> </a> <a class='btn btn-danger'href='#'" .
+$row['id']."'> <i class='fas fa-edit' title='Editar'></i> </a><button class = 'btn btn-warning' " . 
+    " onClick='detalhar(" . $row['id'] .
+    ")' > 
+    <i class='fa fa-eye'title='view'></i></button> <a class='btn btn-danger'href='#'" .
     "onClick='delete_user(" . $row['id'] . "," . $row['matricula'] . ",\"" . $row['beneficiario'] . "\"" . 
     ", \"" . $row['ativo'] . "\"" .
     ")'> <i class='fa fa-archive' title='Inativar'></i> </a></td>";
     echo  "</td>";
+
     }
 
 }
 
-
 }
 $C=new banco;
 $NP=$C->np();
+$id = filter_input ( INPUT_GET ,'id',FILTER_SANITIZE_NUMBER_INT);
+$C->pesquisa($id);
