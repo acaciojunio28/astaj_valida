@@ -1,5 +1,5 @@
 <?php
-require (__DIR__.'/../model/model.php');
+require ('app/model/model.php');
 class faixalist_controller{
     
 public function __construct(){
