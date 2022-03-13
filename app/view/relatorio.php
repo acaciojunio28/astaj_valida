@@ -50,7 +50,7 @@
     </div>
 </div>
 <div class="mt-2 mb-3">
-    <input type="submit" value="Buscar" id="cadastrar" class="btn btn-success">
+    <input type="submit" value="Buscar" id="cadastrar"  name="buscar" class="btn btn-success">
 </div>
 </div>
 </form>
@@ -81,7 +81,7 @@
 
 $C=new read_controller() ;
 
-$C->tabela($_POST['matricula'],$_POST['nome'],$_POST['cpf'],$_POST['tipo'],$_POST['beneficiario'],$_POST['idade'],$_POST['adesao'],$_POST['ativo']);
+$C->tabela($_POST['matricula'],$_POST['nome'],$_POST['cpf'],$_POST['tipo'],$_POST['beneficiario'],$_POST['idade'],$_POST['adesao'],$_POST['ativo'],$_POST['buscar']);
 
 
 ?>
