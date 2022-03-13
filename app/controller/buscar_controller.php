@@ -1,19 +1,29 @@
 <?php
-require('app/model/banco.php');
+require (__DIR__.'/../model/buscar_model.php');
+require (__DIR__.'/../model/banco.php');
 require('user_case/desconto.php');
 
 class read_controller{
 
-private $lista;
-
-public function __construct($pagina){
-
-    $this->lista=new banco;
-    $this->tabela($pagina);
-}
-public function tabela($pagina){
-    $C=$this->lista->read($pagina);
-    $D=$this->lista->read1();
+    public function tabela($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$ativo){
+       
+        //$matricula='';
+        //$nome='';
+        //$cpf='';
+        //$tipo='';
+        //$beneficiario='';
+        //$beneficiario='';
+        //$adesao='';
+        //$idade='';
+        //$ativo='Ativo';
+    
+    $lista=new buscar_model;
+    $lista1=new banco;
+    
+    $C=$lista-> buscar($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$ativo);
+    $D=$lista1->read1();
+    
+     
 
     foreach ($C as $row) {
     
@@ -195,23 +205,13 @@ public function tabela($pagina){
     }  
 
     echo("<td>" . $row['ativo'] . "</td>");
-    
-    echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
-$row['id']."'> <i class='fas fa-edit' title='Editar'></i> </a><button class = 'btn btn-warning' " . 
-    " onClick='detalhar(" . $row['id'] .
-    ")' > 
-    <i class='fa fa-eye'title='view'></i></button> <a class='btn btn-danger'href='#'" .
-    "onClick='delete_user(" . $row['id'] . "," . $row['matricula'] . ",\"" . $row['beneficiario'] . "\"" . 
-    ", \"" . $row['ativo'] . "\"" .
-    ")'> <i class='fa fa-archive' title='Inativar'></i> </a></td>";
-    echo  "</td>";
 
-    }
+    } 
 
 }
 
+
 }
-$C=new banco;
-$NP=$C->np();
-$id = filter_input ( INPUT_GET ,'id',FILTER_SANITIZE_NUMBER_INT);
-$C->pesquisa($id);
+
+ini_set('display_errors', 0 );
+error_reporting(0);

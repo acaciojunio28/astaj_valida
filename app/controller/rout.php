@@ -18,6 +18,9 @@ switch($url){
      break;
      case "login":
       include("app/view/login.php");
+      case"relatorio":
+         include("app/view/relatorio.php");
+      break;
       case"faixaetaria":
          include("app/view/faixaetaria.php");
    break;

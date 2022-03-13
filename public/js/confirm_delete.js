@@ -44,4 +44,16 @@
         }
     });
     });
+    function detalhar(id){
+
+        window.location = "/astaj_valida/listar?id="+id;
+     
+    };
+    function show_modal(){
+        $(document).ready(function(){
+            $('#myModal').modal('show');
+        });
+    };
+
+    
 

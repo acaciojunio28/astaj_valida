@@ -9,9 +9,9 @@ public function pesquisa($id){
     return $inserir;
     
     }
-public function update($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$desconto,$total,$nascimento,$faixa,$id){
+public function update($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado,$id){
     $editar=new banco();
-    $editar->update($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$desconto,$total,$nascimento,$faixa,$id);
+    $editar->update($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado,$id);
     
     }
 }
@@ -25,7 +25,14 @@ $cpf=$_POST['cpf'];
 $tipo=$_POST['tipo'];
 $baneficiario=$_POST['beneficiario'];
 $adesao=$_POST ['adesao'];
-$total=$_POST['total'];
+$telefone=$_POST['telefone'];
+$cep=$_POST['cep'];
+$rua=$_POST['rua'];
+$numero=$_POST['numero'];
+$bairro=$_POST['bairro'];
+$cidade=$_POST['cidade'];
+$estado=$_POST['estado'];
+//$total=$_POST['total'];
 $faixa=$_POST['faixa'];
 $lista=new banco();
 $desconto=$lista->read2($_POST['faixa']);
@@ -56,7 +63,7 @@ elseif($mes==$mesnasc && $dia<=$dianasc){
 
    }
     
-$o-> update ( $matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto[$tipo],$total,$nascimento,$faixa,$_POST['id']);
+$o-> update ( $matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto[$tipo],$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado,$_POST['id']);
  echo  "<script> console.log('Registro incluído com sucesso!'); document.location='/astaj_valida/listar';</script>" ;
     //header('Location: /astaj_valida/listar');
    

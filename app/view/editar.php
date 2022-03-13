@@ -71,11 +71,11 @@
             <option value="A">A</option>
         </select>
     </div>
-       <!-- <div class="col-md-2">
-            <label>Idade:</label>
-            <input type="text" name="idade" id="senha" class="form-control" onkeypress="$(this).mask('#00');" value="<?php //echo $o->pesquisa($id)['idade'];?>">
-        </div>-->
+    <div class="col-md-3">
+        <label>Telefone:</label>
+        <input  class="form-control" type="tel" id="phone" value="<?php echo $o->pesquisa($id)['telefone'];?>" name="telefone" onkeypress="$(this).mask('(00)00000-0000');">
     </div>
+
     <div class="row">
     <div class="col-md-2">
     <label>Adesão:</label>
@@ -136,17 +136,34 @@
             <option value="10">mais de 59 anos</option>
     </select>
     </div>
-    </div>
     <div class="row">
         <div class="col-md-2">
-            <label>Desconto:</label>
-            <input type="text" name="desconto" id="senha" class="form-control" onkeypress="$(this).mask('R$ #.##0,00', {reverse: true});" value="<?php echo $o->pesquisa($id)['desconto'];?>">
+            <label>Cep:</label>
+            <input class="form-control" value="<?php echo $o->pesquisa($id)['cep'];?>" name="cep" type="text" id="cep" value="" size="10" maxlength="9" onkeypress="$(this).mask('00000-000');"/></label>
         </div>
-        <div class="col-md-2">
-            <label>Total:</label>
-            <input type="text" name="total" id="senha" class="form-control" onkeypress="$(this).mask('R$ #.##0,00', {reverse: true});" value="<?php echo $o->pesquisa($id)['desconto_total'];?>">
+        <div class="col-md-4">
+            <label>Rua:</label>
+            <input  class="form-control" value="<?php echo $o->pesquisa($id)['rua'];?>"  name="rua" type="text" id="rua" size="60" /></label>
+        </div>
+        <div class="col-md-1">
+            <label>Numero:</label>
+            <input class="form-control" value="<?php echo $o->pesquisa($id)['numero'];?>"  name="numero" type="text" id="numero" size="2" />
         </div>
     </div>
+    
+    <div class="row">
+        <div class="col-md-2">
+            <label>Bairro:</label>
+            <input class="form-control" value="<?php echo $o->pesquisa($id)['bairro'];?>" name="bairro" type="text" id="bairro" size="40" /></label>
+        </div>
+        <div class="col-md-2">
+            <label>Cidade:</label>
+            <input  class="form-control" name="cidade" value="<?php echo $o->pesquisa($id)['cidade'];?>"  type="text" id="cidade" size="40" />
+        </div>
+        <div class="col-md-1">
+            <label>Estado:</label>
+            <input class="form-control" value="<?php echo $o->pesquisa($id)['estado'];?>" name="estado" type="text" id="uf" size="2" />
+        </div>
     <div class="mt-2 mb-3">
     <input type="submit" value="editar" id="cadastrar" name="editar"class="btn btn-success">
     </div>
