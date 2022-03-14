@@ -11,11 +11,7 @@
     <a class="btn btn-success" href="/astaj_valida/cadastro">Cadastrar</a>
     
 </div>
-<div class="col-md-1">
 
-    <a class="btn btn-success" href="app/controller/planilha.php" id="relatorio"> Exportar</i></a>
-
-</div>
 
 <div class="col-md-3 mb-2 ">
     <input type="text" class="form-control" id="search" placeholder="Buscar">
