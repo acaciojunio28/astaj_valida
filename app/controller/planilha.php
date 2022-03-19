@@ -1,8 +1,10 @@
 <?php
+require('../model/buscar_model.php');
 require('../model/banco.php');
-$lista=new banco;
-$C=$lista->read();
-$D=$lista->read1();
+$lista=new buscar_model;
+$lista1=new banco;
+$C=$lista->buscar($_POST['matricula'],$_POST['nome'],$_POST['cpf'],$_POST['tipo'],$_POST['beneficiario'],$_POST['idade'],$_POST['adesao'],$_POST['ativo']);
+$D=$lista1->read1();
 
 // Configurações header para forçar o download
 header ("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
@@ -29,6 +31,14 @@ header ("Content-Description: PHP Generated Data" );
     echo"<th>Data de Nascimento</th>";
     echo"<th>faixa etaria</th>";
     echo"<th>Situação</th>";
+    echo"<th>Status</th>";
+    echo"<th>Telefone</th>";
+    echo"<th>Cep</th>";
+    echo"<th>Rua</th>";
+    echo"<th>Numero</th>";
+    echo"<th>Bairro</th>";
+    echo"<th>Cidade</th>";
+    echo"<th>Estado</th>";
     echo"</tr>";
     foreach ($C as $row) {
     echo"<tr>";
@@ -184,6 +194,15 @@ header ("Content-Description: PHP Generated Data" );
     }else{
         echo "<td> Vencido </td>";
     }
+
+echo  "<td>" . $row ['ativo']. "</td>" ;
+echo  "<td>" . $row ['telefone']. "</td>" ;
+echo  "<td>" . $row ['cep']. "</td>" ;
+echo  "<td>" . $row ['rua']. "</td>" ;
+echo  "<td>" . $row ['numero']. "</td>" ;
+echo  "<td>" . $row ['bairro']. "</td>" ;
+echo  "<td>" . $row ['cidade']. "</td>" ;
+echo  "<td>" . $row ['estado']. "</td>" ;
 };
     echo"</tr>";
     echo"</table>";

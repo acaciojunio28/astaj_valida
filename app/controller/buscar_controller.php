@@ -5,7 +5,7 @@ require('user_case/desconto.php');
 
 class read_controller{
 
-    public function tabela($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$ativo){
+    public function tabela($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$ativo,$buscar){
        
         //$matricula='';
         //$nome='';
@@ -23,7 +23,7 @@ class read_controller{
     $C=$lista-> buscar($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$ativo);
     $D=$lista1->read1();
     
-     
+     if(isset($buscar)){
 
     foreach ($C as $row) {
     
@@ -209,8 +209,13 @@ class read_controller{
     } 
 
 }
+if(empty($C)){
+    echo '<div class="alert alert-success" role="alert">
+    Nenhuma busca encontrada!
+    </div>';
+}
 
-
+}
 }
 
 ini_set('display_errors', 0 );

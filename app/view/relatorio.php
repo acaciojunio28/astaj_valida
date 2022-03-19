@@ -49,11 +49,26 @@
         </select>
     </div>
 </div>
-<div class="mt-2 mb-3">
-    <input type="submit" value="Buscar" id="cadastrar" class="btn btn-success">
-</div>
+<div class="row mb-3 ">
+<div class="col-md-1">
+    <input type="submit" value="Buscar" id="cadastrar"  name="buscar" class="btn btn-success">
 </div>
 </form>
+<div class="col-md-1">
+<form method="POST" action="/astaj_valida/app/controller/planilha.php">
+<input type="hidden" name="matricula" value="<?php echo $_POST['matricula']; ?>">
+<input type="hidden" name="nome" value="<?php echo $_POST['nome']; ?>">
+<input type="hidden" name="cpf" value="<?php echo $_POST['cpf']; ?>">
+<input type="hidden" name="tipo" value="<?php echo $_POST['tipo']; ?>">
+<input type="hidden" name="beneficiario" value="<?php echo $_POST['beneficiario']; ?>">
+<input type="hidden" name="idade" value="<?php echo $_POST['idade']; ?>">
+<input type="hidden" name="adesao" value="<?php echo $_POST['adesao']; ?>">
+<input type="hidden" name="ativo" value="<?php echo $_POST['ativo']; ?>">
+<input type="submit" value="Exportar" id="cadastrar"  name="buscar" class="btn btn-success">
+</form>
+</div>
+</div>
+
 
 <table border="1" class="table table-hover " id="tabela">
 <thead>
@@ -81,7 +96,7 @@
 
 $C=new read_controller() ;
 
-$C->tabela($_POST['matricula'],$_POST['nome'],$_POST['cpf'],$_POST['tipo'],$_POST['beneficiario'],$_POST['idade'],$_POST['adesao'],$_POST['ativo']);
+$C->tabela($_POST['matricula'],$_POST['nome'],$_POST['cpf'],$_POST['tipo'],$_POST['beneficiario'],$_POST['idade'],$_POST['adesao'],$_POST['ativo'],$_POST['buscar']);
 
 
 ?>
