@@ -20,9 +20,11 @@ class banco{
     //mysqli_query($this->mysql,"INSERT INTO cadastro (matricula,nome,cpf,'tipo de plano',beneficiário,idade,adesão,desconto,'desconto total') VALUES ('$matricula','$nome','$cpf','$tipo','$baneficiario','$idade','$adesao','$desconto','$total')");
    
    // }
-   public function create($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$desconto,$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado){
+   public function create($matricula,$nome,$cpf,$tipo,$tipo_odonto,$beneficiario,$idade,$adesao,$desconto,$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado){
         
-    mysqli_query($this->mysql,"INSERT INTO astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,idade,adesao,desconto,data_nascimento,faixa_etaria,telefone,cep,rua,numero,bairro,cidade,estado) VALUES ('$matricula','$nome','$cpf','$tipo','$beneficiario','$idade','$adesao','$desconto','$nascimento','$faixa','$telefone','$cep','$rua','$numero','$bairro','$cidade','$estado')");
+    mysqli_query($this->mysql,"INSERT INTO astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,tipo_de_plano_odonto,
+        beneficiario,idade,adesao,desconto,data_nascimento,faixa_etaria,telefone,cep,rua,numero,bairro,cidade,estado) VALUES (
+        '$matricula','$nome','$cpf','$tipo','$tipo_odonto','$beneficiario','$idade','$adesao','$desconto','$nascimento','$faixa','$telefone','$cep','$rua','$numero','$bairro','$cidade','$estado')");
    
     } 
     public function np(){
