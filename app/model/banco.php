@@ -83,27 +83,12 @@ class banco{
     public function login($login,$senha){
 
 
-        $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_users WHERE user_login = '$login'");
+        $verificar=mysqli_query($this->mysql,"SELECT * FROM user WHERE user = '$login' AND senha = '$senha'");
         //while($row=mysqli_fetch_array($verificar)) {
         //    $array[]=$row;
         //}
-        $row = mysqli_fetch_array($verificar);
-        $senha_hash = $row['user_pass'];
-        //return mysqli_num_rows($verificar);
-
-        $wp_hasher = new PasswordHash(8, TRUE);
-
-        $password_hashed = $senha_hash;
-        $plain_password = $senha;
-        
-        if($wp_hasher->CheckPassword($plain_password, $password_hashed)) {
-            //echo "YES, Matched";
-            return 1;
-        }else {
-            //echo "No, Wrong Password";
-            return 0;
-        }
-
+    
+        return $verificar;
         
    
     }

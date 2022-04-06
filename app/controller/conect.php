@@ -1,16 +1,18 @@
 <?php
+session_start();
+
 class conect{
 
 public function conectar(){
-session_start();
-//$nlo=$_SESSION['login'];
+
+$url="/astaj_valida/index.php";
 if(!isset($_SESSION['login'])){
-    header("Location:/astaj_valida/ ");  
-}//else{
-//    echo"<script language='javascript' type='text/javascript'>alert('Bem vindo " . $_SESSION['login'] ."');</script>";
-//    }
- }
+    header("Location:".$url);  
+}
+ 
+}
 
 }
 $D=new conect();
 $D->conectar();
+

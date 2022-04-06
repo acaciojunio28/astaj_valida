@@ -1,4 +1,4 @@
-<?php //require('app/controller/conect.php');?>
+<?php require('app/controller/conect.php');?>
 <?php require ('layout/heder.php');?>
 
 <div id="cadastro">

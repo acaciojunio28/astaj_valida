@@ -24,7 +24,19 @@ switch($url){
       case"faixaetaria":
          include("app/view/faixaetaria.php");
    break;
-     
+   case"senha":
+      include("app/view/listarsenha.php");
+   break;
+   case"erro":
+   include("app/view/alerta.php");
+   break;
+   case"cadastrosenha":
+      include("app/view/cadastrosenha.php");
+   break;
+   case"editarsenha":
+      include("app/view/editarsenha.php");
+   break;
+
 }
 
 
