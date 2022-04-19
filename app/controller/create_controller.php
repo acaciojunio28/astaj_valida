@@ -13,6 +13,7 @@ class create_controller{
     $nome=$_POST['nome'];
     $cpf=$_POST['cpf'];
     $tipo=$_POST['tipo'];
+    $tipo_odonto=$_POST['tipo_odonto'];
     $telefone=$_POST['telefone'];
     $cep=$_POST['cep'];
     $rua=$_POST['rua'];
@@ -84,7 +85,7 @@ class create_controller{
 
 
     $cadastro= new banco();
-    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto[$tipo],$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado
+    $inserir=$cadastro->create($matricula,$nome,$cpf,$tipo,$tipo_odonto,$baneficiario,$idade,$adesao,$desconto[$tipo],$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado
    );
    
    }

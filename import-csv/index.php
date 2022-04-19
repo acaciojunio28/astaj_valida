@@ -1,4 +1,4 @@
-<?php require('../app/controller/conect.php');?>
+<?php //require('../app/controller/conect.php');?>
 <?php
 use Phppot\DataSource;
 
@@ -36,22 +36,22 @@ if (isset($_POST["import"])) {
             if (isset($column[4])) {
                 $beneficiario = mysqli_real_escape_string($conn, $column[4]);
             }
-			$idade = "";
-            if (isset($column[5])) {
-                $idade = mysqli_real_escape_string($conn, $column[5]);
-            }
+			//$idade = "";
+            //if (isset($column[5])) {
+            //    $idade = mysqli_real_escape_string($conn, $column[5]);
+            //}
 			$adesao = "";
             if (isset($column[6])) {
                 $adesao = mysqli_real_escape_string($conn, $column[6]);
             }
-			$desconto = "";
-            if (isset($column[7])) {
-                $desconto = mysqli_real_escape_string($conn, $column[7]);
-            }
-			$desconto_total = "";
-            if (isset($column[8])) {
-                $desconto_total = mysqli_real_escape_string($conn, $column[8]);
-            }
+			//$desconto = "";
+            //if (isset($column[7])) {
+            //    $desconto = mysqli_real_escape_string($conn, $column[7]);
+            //}
+			//$desconto_total = "";
+            //if (isset($column[8])) {
+            //    $desconto_total = mysqli_real_escape_string($conn, $column[8]);
+            //}
 			$data_nascimento = "";
             if (isset($column[9])) {
                 $data_nascimento = mysqli_real_escape_string($conn, $column[9]);
@@ -60,23 +60,61 @@ if (isset($_POST["import"])) {
             if (isset($column[10])) {
                 $faixa_etaria = mysqli_real_escape_string($conn, $column[10]);
             }
-            
-            
-            $sqlInsert = "INSERT into astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,idade,adesao,desconto,desconto_total,data_nascimento,faixa_etaria) values (?,?,?,?,?,?,?,?,?,?,?)";
-            $paramType = "sssssssssss";
+            $ativo = "";
+            if (isset($column[11])) {
+                $ativo = mysqli_real_escape_string($conn, $column[11]);
+            }
+            $telefone = "";
+            if (isset($column[12])) {
+                $telefone = mysqli_real_escape_string($conn, $column[12]);
+            }
+            $cep = "";
+            if (isset($column[13])) {
+                $cep = mysqli_real_escape_string($conn, $column[13]);
+            }
+            $rua = "";
+            if (isset($column[14])) {
+                $rua = mysqli_real_escape_string($conn, $column[14]);
+            }
+            $numero = "";
+            if (isset($column[15])) {
+                $numero = mysqli_real_escape_string($conn, $column[15]);
+            }
+            $bairro = "";
+            if (isset($column[16])) {
+                $bairro = mysqli_real_escape_string($conn, $column[16]);
+            }
+            $cidade = "";
+            if (isset($column[17])) {
+                $cidade = mysqli_real_escape_string($conn, $column[17]);
+            }
+            $estado = "";
+            if (isset($column[18])) {
+                $estado = mysqli_real_escape_string($conn, $column[18]);
+            }
+            $sqlInsert = "INSERT into astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,adesao,data_nascimento,faixa_etaria,
+                ativo,telefone,cep,rua,numero,bairro,cidade,estado) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            $paramType = "ssssssssssssssss";
             $paramArray = array(
                 $matricula,
                 $nome,
 				$cpf,
 				$tipo_de_plano,
 				$beneficiario,
-				$idade,
+				//$idade,
 				$adesao,
-				$desconto,
-				$desconto_total,
+				//$desconto,
+				//$desconto_total,
 				$data_nascimento,
-                $faixa_etaria
-
+                $faixa_etaria,
+                $ativo,
+                $telefone,
+                $cep,
+                $rua,
+                $numero,
+                $bairro,
+                $cidade,
+                $estado
             );
             $insertId = $db->insert($sqlInsert, $paramType, $paramArray);
             
@@ -92,9 +130,10 @@ if (isset($_POST["import"])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
+<meta charset="UTF-8">
+
 <script src="jquery-3.2.1.min.js"></script>
 
 <style>
@@ -227,9 +266,14 @@ $(document).ready(function() {
 					<th>desconto_total</th>
 					<th>data_nascimento</th>
                     <th>faixa_etaria</th>
-
-
-
+                    <th>ativo</th>
+                    <th>telefone</th>
+                    <th>cep</th>
+                    <th>rua</th>
+                    <th>numero</th>
+                    <th>bairro</th>
+                    <th>cidade</th>
+                    <th>estado</th>
                 </tr>
             </thead>
 <?php
@@ -250,6 +294,14 @@ $(document).ready(function() {
 					<td><?php  echo $row['desconto_total']; ?></td>
 					<td><?php  echo $row['data_nascimento']; ?></td>
                     <td><?php  echo $row['faixa_etaria']; ?></td>
+                    <td><?php  echo $row['ativo']; ?></td>
+                    <td><?php  echo $row['telefone']; ?></td>
+                    <td><?php  echo $row['cep']; ?></td>
+                    <td><?php  echo $row['rua']; ?></td>
+                    <td><?php  echo $row['numero']; ?></td>
+                    <td><?php  echo $row['bairro']; ?></td>
+                    <td><?php  echo $row['cidade']; ?></td>
+                    <td><?php  echo $row['estado']; ?></td>
 
                 </tr>
                     <?php
