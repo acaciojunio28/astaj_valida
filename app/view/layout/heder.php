@@ -33,10 +33,15 @@
       <li class="nav-item">
         <a class="nav-link text-dark" href="/astaj_valida/import-csv">Importar</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="/astaj_valida/faixaetaria">Configuração</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#">Configuração</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/astaj_valida/faixaetaria">Faixa etária</a></li>
+        <li><a class="dropdown-item" href="/astaj_valida/senha">Senhas</a></li>
+       </ul>
       </li>
 </ul>
+
    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
       <li class="nav-item">
             <a class="nav-link text-dark " href="app/controller/sair.php">
