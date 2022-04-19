@@ -1,5 +1,6 @@
-<?php require('app/controller/cessao.php');?>
+
 <?php require ('layout/heder.php');?>
+<?php require('app/controller/cessao.php');?>
 <?php require('app/controller/readsenha_controller.php');?>
 <div class="row mb-3 ">
 <div class="col-md-1">
