@@ -37,7 +37,7 @@ class banco{
         $quantidade = 10;
         //Calcula a pagina de qual valor será exibido
         $inicio = ($quantidade * $pagina) - $quantidade;
-        $verificar=mysqli_query($this->mysql,"SELECT *, 
+        $verificar=mysqli_query($this->mysql,"SELECT *, /**CONCAT(tipo_de_plano, ',', tipo_de_plano_odonto) AS tipo_de_plano2,**/
             replace( (select sum(replace(desconto, \",\", \".\")) 
             from astaje_valida_cadastro t2 where t2.matricula = t1.matricula and t2.ativo='Ativo'), \".\", \",\") as desconto_total 
             FROM astaje_valida_cadastro t1 LIMIT $inicio, $quantidade");
@@ -62,8 +62,8 @@ class banco{
         $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro WHERE id='$id'");
        return mysqli_fetch_assoc($verificar);
             }
-    public function update($matricula,$nome,$cpf,$tipo,$baneficiario,$idade,$adesao,$desconto,$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado,$id){
-        mysqli_query($this->mysql,"UPDATE astaje_valida_cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',beneficiario='$baneficiario',idade='$idade',adesao='$adesao',desconto='$desconto',data_nascimento='$nascimento',faixa_etaria='$faixa',telefone='$telefone',cep='$cep',rua='$rua',numero='$numero',bairro='$bairro',cidade='$cidade',estado='$estado' WHERE id='$id'");
+    public function update($matricula,$nome,$cpf,$tipo,$tipo_odonto,$baneficiario,$idade,$adesao,$desconto,$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado,$id){
+        mysqli_query($this->mysql,"UPDATE astaje_valida_cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',tipo_de_plano_odonto='$tipo_odonto',beneficiario='$baneficiario',idade='$idade',adesao='$adesao',desconto='$desconto',data_nascimento='$nascimento',faixa_etaria='$faixa',telefone='$telefone',cep='$cep',rua='$rua',numero='$numero',bairro='$bairro',cidade='$cidade',estado='$estado' WHERE id='$id'");
     }
     public function delete($id,$matricula,$beneficiario){
         //mysqli_query($this->mysql,"DELETE FROM astaje_valida_cadastro WHERE id='$id'");
