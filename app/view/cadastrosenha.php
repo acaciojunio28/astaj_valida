@@ -2,7 +2,7 @@
 <?php require('app/controller/cessao.php');?>
 <div id="cadastro">
 
-<form method="POST" action="app/controller/createsenha_controller">
+<form method="POST" action="app/controller/createsenha_controller.php">
 <div class="col-md-3">
 <label>Nome:</label>
 <input type="text" name="nome" id="senha" class="form-control">
