@@ -27,6 +27,19 @@
         });
     });
     // Show inativos.
+    
+    if ($('#showInativos').checked){
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) != 0)
+        });
+    }else{
+        var value = "Inativo".toLowerCase();
+        $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) <= 0)
+        });
+        //alert(value);
+    }
     $('#showInativos').on('change', function(){
         if(this.checked)
             {

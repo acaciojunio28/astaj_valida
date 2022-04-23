@@ -155,9 +155,9 @@
                 <option selected value="<?php echo $o->pesquisa($id)['tipo_de_plano_odonto'];?>">
                     <?php echo $o->pesquisa($id)['tipo_de_plano_odonto'];?>
                 </option>
-                <option value="gold">Plano Gold</option>
-                <option value="platinum">Pleno Platinium</option>
-                <option value="diamond">Pleno Diamond</option>
+                <option value="plano_gold">Plano Gold</option>
+                <option value="pleno_platinum">Pleno Platinium</option>
+                <option value="pleno_diamond">Pleno Diamond</option>
             </select>
         </div>
     </div>

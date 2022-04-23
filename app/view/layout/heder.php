@@ -36,8 +36,8 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#">Configuração</a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="/astaj_valida/faixaetaria">Faixa etária</a></li>
-        <li><a class="dropdown-item" href="/astaj_valida/senha">Senhas</a></li>
+        <li><a class="dropdown-item" href="/astaj_valida/faixaetaria">Planos</a></li>
+        <li><a class="dropdown-item" href="/astaj_valida/senha">Usuários</a></li>
        </ul>
       </li>
 </ul>

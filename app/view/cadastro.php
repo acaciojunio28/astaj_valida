@@ -89,9 +89,9 @@
             <label>Tipo:</label>
             <select name="tipo_odonto" class="form-control">
                 <option selected>Escolher</option>
-                <option value="gold">Plano Gold</option>
-                <option value="platinum">Pleno Platinium</option>
-                <option value="diamond">Pleno Diamond</option>
+                <option value="plano_gold">Plano Gold</option>
+                <option value="pleno_platinum">Pleno Platinium</option>
+                <option value="pleno_diamond">Pleno Diamond</option>
             </select>
         </div>
     </div>

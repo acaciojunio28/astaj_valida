@@ -22,7 +22,7 @@ public function tabela($pagina){
     echo  "<th>" . $row ['matricula']. "</th>" ;
     echo  "<td>" . $row ['nome']. "</td>" ;
     echo  "<td>" . $row ['cpf']. "</td>" ;
-    $list1=$row ['tipo_de_plano'];
+    $list1=$row['tipo_de_plano'];
     switch ($list1) {
         case 'afinidade_basico':
             echo "<td>Afinidade Básico</td>" ;;
@@ -34,25 +34,34 @@ public function tabela($pagina){
             echo "<td>Afinidade Versatil</td>";
             break;
         case 'plano_gold':
-                echo "<td> Plano Gold</td>";
+                echo "<td>Plano Gold</td>";
             break;
         case 'pleno_platinum':
                 echo "<td>Pleno Platinum</td>";
         case 'pleno_diamond':
                  echo "<td>Pleno Diamond</td>";
             break;
+        case 'Escolher':
+                echo "<td>-</td>";
+           break;
 
     }
+    if($row ['tipo_de_plano_odonto'] == "Escolher"){
+        $tipo_odonto_param = "-";
+    }else{
+        $tipo_odonto_param = $row['tipo_de_plano_odonto'];
+    }
+    echo  "<td>" . $tipo_odonto_param . "</td>" ;
     echo  "<td>" . $row ['beneficiario']. "</td>" ;
     echo  "<td>" . $row ['idade']. "</td>" ;
     echo  "<td>" . date('d/m/Y', strtotime($row['adesao'])). "</td>" ;
-    echo  "<td>" . $row ['desconto']. "</td>" ;
+    echo  "<td>" . $row['desconto'] . "</td>" ;
     // Desconto total apenas para Titular.
     $desconto_total = new DescontoTotal();
     $desconto_total_titular = $desconto_total->desconto_apenas_titular($row['desconto_total'], $row['beneficiario']);
     echo  "<td>" . $desconto_total_titular . "</td>" ;
     echo  "<td>" . date('d/m/Y', strtotime($row['data_nascimento'])). "</td>" ;
-    $list=$row ['faixa_etaria'];
+    $list=$row['faixa_etaria'];
     switch ($list) {
         case 1:
             echo "<td>até 18 anos</td>" ;;
@@ -83,7 +92,10 @@ public function tabela($pagina){
             break; 
         case 10:
                 echo "<td>mais de 59 anos</td>";
-            break; 
+            break;
+        case "Escolher":
+            echo "<td>-</td>";
+        break; 
 
     }
     
@@ -119,8 +131,8 @@ public function tabela($pagina){
     
     $idade1 = $ano - $anonasc;
 
-    if (empty($row['faixa_etaria'])){
-        echo "<td></td>";
+    if (empty($row['faixa_etaria']) || $row['faixa_etaria'] == "Escolher"){
+        echo "<td>-</td>";
     }    elseif ($row['faixa_etaria']==1 && $idade<=$D[0]["maximo"]) {
     
         if(($idade1>$D[0]["maximo"]) && ($mes == ($mesnasc-1) || $mes == $mesnasc )){

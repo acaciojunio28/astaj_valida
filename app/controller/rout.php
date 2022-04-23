@@ -7,38 +7,35 @@ else{
 }
 
 switch($url){
-    case "listar":
-       include("app/view/listar.php");
-    break;
-    case "cadastro":
-        include("app/view/cadastro.php");
-     break;
-     case "editar":
-        include("app/view/editar.php");
-     break;
-     case "login":
-      include("app/view/login.php");
-      case"relatorio":
-         include("app/view/relatorio.php");
+   case "listar":
+      include("app/view/listar.php");
       break;
-      case"faixaetaria":
-         include("app/view/faixaetaria.php");
-   break;
+   case "cadastro":
+      include("app/view/cadastro.php");
+      break;
+   case "editar":
+      include("app/view/editar.php");
+      break;
+   case "login":
+      include("app/view/login.php");
+      break;
+   case"relatorio":
+      include("app/view/relatorio.php");
+      break;
+   case"faixaetaria":
+      include("app/view/faixaetaria.php");
+      break;
    case"senha":
       include("app/view/listarsenha.php");
-   break;
+      break;
    case"erro":
-   include("app/view/alerta.php");
-   break;
+      include("app/view/alerta.php");
+      break;
    case"cadastrosenha":
       include("app/view/cadastrosenha.php");
-   break;
+      break;
    case"editarsenha":
       include("app/view/editarsenha.php");
-   break;
+      break;
 
 }
-
-
-
-

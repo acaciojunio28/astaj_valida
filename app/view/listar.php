@@ -17,7 +17,7 @@
 
 </div>
 <div  class="col-md-1">
-    <input type="checkbox" id="showInativos" name="showInativos" value="Inativo" checked>
+    <input type="checkbox" id="showInativos" name="showInativos" value="Inativo" >
         <label for="showInativos">Inativos</label>
 </div>
 </div>
@@ -30,6 +30,7 @@
     <th>Nome</th>
     <th>CPF</th>
     <th>Tipo de Plano</th>
+    <th>Tipo de Plano Odonto</th>
     <th>Beneficiário</th>
     <th>Idade</th>
     <th>Adesão</th>
