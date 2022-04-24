@@ -50,7 +50,7 @@ class create_controller{
          }
 
     //$idade=$_POST['idade'];
-    $adesao=$_POST ['adesao'];
+    $adesao=$_POST['adesao'];
    // $total=$_POST['total'];
     $faixa=$_POST['faixa'];
     $lista=new banco;
@@ -67,7 +67,6 @@ class create_controller{
       $desconto_tipo_o = str_replace(",",".",$desconto_odonto[$tipo_odonto]);
       $desconto = $desconto_tipo + $desconto_tipo_o;
       $desconto = str_replace(",",".",$desconto);
-
     }else{
       $faixa_param = $faixa;
       $tipo_param = $tipo;
@@ -113,4 +112,4 @@ class create_controller{
 }
 $c=new create_controller();
 $c->transforma();
-echo "<script> alert ('Registrado com Sucesso!'); document.location='/astaj_valida/listar'</script>";
+echo "<script> alert ('Registrado com Sucesso!'); document.location='/valida/listar'</script>";

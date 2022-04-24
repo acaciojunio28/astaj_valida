@@ -59,7 +59,7 @@
     });
     function detalhar(id){
 
-        window.location = "/astaj_valida/listar?id="+id;
+        window.location = "/valida/listar?id="+id;
      
     };
     function show_modal(){

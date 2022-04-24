@@ -17,7 +17,7 @@ class buscar_model{
     }
 
     public function buscar($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$ativo){
-        $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro WHERE matricula LIKE '$matricula%' AND nome LIKE '$nome%' AND cpf LIKE '$cpf%'AND tipo_de_plano LIKE '$tipo%' AND beneficiario LIKE '$beneficiario%' AND idade LIKE '$idade%' AND adesao LIKE '$adesao%'AND ativo LIKE '$ativo%'");
+        $verificar=mysqli_query($this->mysql,"SELECT * FROM valida_cadastro WHERE matricula LIKE '$matricula%' AND nome LIKE '$nome%' AND cpf LIKE '$cpf%'AND tipo_de_plano LIKE '$tipo%' AND beneficiario LIKE '$beneficiario%' AND idade LIKE '$idade%' AND adesao LIKE '$adesao%' AND ativo LIKE '$ativo%'");
         while($row=mysqli_fetch_array($verificar)) {
             $array[]=$row;
         }

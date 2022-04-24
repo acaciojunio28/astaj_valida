@@ -21,10 +21,10 @@ public function tabela(){
     echo  "<th>" . $row ['user']. "</th>" ;
     echo  "<td>" . $row ['acesso']. "</td>" ;
       
-    echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editarsenha?id=". 
+    echo "<td><a class = 'btn btn-primary' href = '/valida/editarsenha?id=". 
 $row['id']."'> <i class='fas fa-edit' title='Editar'></i> </a>
-<a class = 'btn btn-danger' href = '/astaj_valida/app/controller/deletesenha_controller.php?id=". 
-$row['id']."'> <i class='fas fa-trash-alt'></i> </a>";;
+<a class = 'btn btn-danger' href = '/valida/app/controller/deletesenha_controller.php?id=". 
+$row['id']."'> <i class='fas fa-trash-alt'></i> </a>";
     echo  "</td>";
 
     }

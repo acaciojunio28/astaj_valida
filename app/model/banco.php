@@ -22,14 +22,14 @@ class banco{
    // }
    public function create($matricula,$nome,$cpf,$tipo,$tipo_odonto,$beneficiario,$idade,$adesao,$desconto,$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado){
         
-    mysqli_query($this->mysql,"INSERT INTO astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,tipo_de_plano_odonto,
+    mysqli_query($this->mysql,"INSERT INTO valida_cadastro (matricula,nome,cpf,tipo_de_plano,tipo_de_plano_odonto,
         beneficiario,idade,adesao,desconto,data_nascimento,faixa_etaria,telefone,cep,rua,numero,bairro,cidade,estado) VALUES (
         '$matricula','$nome','$cpf','$tipo','$tipo_odonto','$beneficiario','$idade','$adesao','$desconto','$nascimento','$faixa','$telefone','$cep','$rua','$numero','$bairro','$cidade','$estado')");
    
     } 
     public function np(){
         $quantidade = 10;
-        $tr = mysqli_num_rows(mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro "));
+        $tr = mysqli_num_rows(mysqli_query($this->mysql,"SELECT * FROM valida_cadastro "));
         $tp=$tr/$quantidade;
         return $tp;
     }
@@ -39,8 +39,8 @@ class banco{
         $inicio = ($quantidade * $pagina) - $quantidade;
         $verificar=mysqli_query($this->mysql,"SELECT *, /**CONCAT(tipo_de_plano, ',', tipo_de_plano_odonto) AS tipo_de_plano2,**/
             replace( (select sum(replace(desconto, \",\", \".\")) 
-            from astaje_valida_cadastro t2 where t2.matricula = t1.matricula and t2.ativo='Ativo'), \".\", \",\") as desconto_total 
-            FROM astaje_valida_cadastro t1 LIMIT $inicio, $quantidade");
+            from valida_cadastro t2 where t2.matricula = t1.matricula and t2.ativo='Ativo'), \".\", \",\") as desconto_total 
+            FROM valida_cadastro t1 LIMIT $inicio, $quantidade");
 
         while($row=mysqli_fetch_array($verificar)) {
             $array[]=$row;
@@ -48,38 +48,38 @@ class banco{
         return $array;
     }
     public function read1(){
-        $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_faixa_etaria");
+        $verificar=mysqli_query($this->mysql,"SELECT * FROM faixa_etaria");
         while($row=mysqli_fetch_array($verificar)) {
             $array[]=$row;
         }
         return $array;
     }
     public function read2($faixa){
-    $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_tipo WHERE faixa_etaria='$faixa'");
+    $verificar=mysqli_query($this->mysql,"SELECT * FROM tipo WHERE faixa_etaria='$faixa'");
     return mysqli_fetch_assoc($verificar);
     }
     public function pesquisa($id){
-        $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_valida_cadastro WHERE id='$id'");
+        $verificar=mysqli_query($this->mysql,"SELECT * FROM valida_cadastro WHERE id='$id'");
        return mysqli_fetch_assoc($verificar);
             }
     public function update($matricula,$nome,$cpf,$tipo,$tipo_odonto,$baneficiario,$idade,$adesao,$desconto,$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado,$id){
-        mysqli_query($this->mysql,"UPDATE astaje_valida_cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',tipo_de_plano_odonto='$tipo_odonto',beneficiario='$baneficiario',idade='$idade',adesao='$adesao',desconto='$desconto',data_nascimento='$nascimento',faixa_etaria='$faixa',telefone='$telefone',cep='$cep',rua='$rua',numero='$numero',bairro='$bairro',cidade='$cidade',estado='$estado' WHERE id='$id'");
+        mysqli_query($this->mysql,"UPDATE valida_cadastro SET matricula='$matricula',nome='$nome', cpf='$cpf',tipo_de_plano='$tipo',tipo_de_plano_odonto='$tipo_odonto',beneficiario='$baneficiario',idade='$idade',adesao='$adesao',desconto='$desconto',data_nascimento='$nascimento',faixa_etaria='$faixa',telefone='$telefone',cep='$cep',rua='$rua',numero='$numero',bairro='$bairro',cidade='$cidade',estado='$estado' WHERE id='$id'");
     }
     public function delete($id,$matricula,$beneficiario){
-        //mysqli_query($this->mysql,"DELETE FROM astaje_valida_cadastro WHERE id='$id'");
+        //mysqli_query($this->mysql,"DELETE FROM valida_cadastro WHERE id='$id'");
         if ($beneficiario == "T"){
             mysqli_query(
-                $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='Inativo' WHERE matricula='$matricula'"
+                $this->mysql,"UPDATE valida_cadastro SET ativo='Inativo' WHERE matricula='$matricula'"
             );
         }else{
             mysqli_query(
-                $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='Inativo' WHERE id='$id'"
+                $this->mysql,"UPDATE valida_cadastro SET ativo='Inativo' WHERE id='$id'"
             );
         }
     }
     public function ativar_db($id){
         mysqli_query(
-            $this->mysql,"UPDATE astaje_valida_cadastro SET ativo='Ativo' WHERE id='$id'"
+            $this->mysql,"UPDATE valida_cadastro SET ativo='Ativo' WHERE id='$id'"
         );
     }
     public function login($login,$senha){

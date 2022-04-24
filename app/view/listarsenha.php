@@ -1,10 +1,11 @@
+<?php require('app/controller/conect.php');?>
 <?php require('app/controller/cessao.php');?>
 <?php require ('layout/heder.php');?>
 <?php require('app/controller/readsenha_controller.php');?>
 <div class="row mb-3 ">
 <div class="col-md-1">
 
-    <a class="btn btn-success" href="/astaj_valida/cadastrosenha">Cadastrar</a>
+    <a class="btn btn-success" href="/valida/cadastrosenha">Cadastrar</a>
     
 </div>
 </div>

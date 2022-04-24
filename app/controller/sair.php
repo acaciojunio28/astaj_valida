@@ -3,7 +3,7 @@ class sair{
 public function sair(){
 session_start();
 unset($_SESSION['login']);
-header("Location:/astaj_valida/");
+header("Location:/valida/");
 session_destroy();
 }
     }

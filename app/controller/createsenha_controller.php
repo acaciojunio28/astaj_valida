@@ -15,4 +15,4 @@ class create_controller{
 }
 $c=new create_controller;
 $c->incluir($_POST['nome'],$_POST['user'],md5($_POST['senha']),$_POST['acesso']);
-echo "<script> alert ('Registrado com Sucesso!'); document.location='/astaj_valida/senha'</script>";
+echo "<script> alert ('Registrado com Sucesso!'); document.location='/valida/senha'</script>";

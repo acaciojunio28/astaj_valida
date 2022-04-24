@@ -1,4 +1,4 @@
-<?php //require('../app/controller/conect.php');?>
+<?php require('../app/controller/conect.php');?>
 <?php
 use Phppot\DataSource;
 
@@ -92,7 +92,7 @@ if (isset($_POST["import"])) {
             if (isset($column[18])) {
                 $estado = mysqli_real_escape_string($conn, $column[18]);
             }
-            $sqlInsert = "INSERT into astaje_valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,adesao,data_nascimento,faixa_etaria,
+            $sqlInsert = "INSERT into valida_cadastro (matricula,nome,cpf,tipo_de_plano,beneficiario,adesao,data_nascimento,faixa_etaria,
                 ativo,telefone,cep,rua,numero,bairro,cidade,estado) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             $paramType = "ssssssssssssssss";
             $paramArray = array(
@@ -248,7 +248,7 @@ $(document).ready(function() {
 
         </div>
                <?php
-            $sqlSelect = "SELECT * FROM astaje_valida_cadastro";
+            $sqlSelect = "SELECT * FROM valida_cadastro";
             $result = $db->select($sqlSelect);
             if (! empty($result)) {
                 ?>

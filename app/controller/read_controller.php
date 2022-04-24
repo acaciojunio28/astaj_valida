@@ -34,15 +34,15 @@ public function tabela($pagina){
             echo "<td>Afinidade Versatil</td>";
             break;
         case 'plano_gold':
-                echo "<td>Plano Gold</td>";
+            echo "<td>Plano Gold</td>";
             break;
         case 'pleno_platinum':
-                echo "<td>Pleno Platinum</td>";
+            echo "<td>Pleno Platinum</td>";
         case 'pleno_diamond':
-                 echo "<td>Pleno Diamond</td>";
+            echo "<td>Pleno Diamond</td>";
             break;
         case 'Escolher':
-                echo "<td>-</td>";
+            echo "<td>-</td>";
            break;
 
     }
@@ -208,7 +208,7 @@ public function tabela($pagina){
 
     echo("<td>" . $row['ativo'] . "</td>");
     
-    echo "<td><a class = 'btn btn-primary' href = '/astaj_valida/editar?id=". 
+    echo "<td><a class = 'btn btn-primary' href = '/valida/editar?id=". 
 $row['id']."'> <i class='fas fa-edit' title='Editar'></i> </a><button class = 'btn btn-warning' " . 
     " onClick='detalhar(" . $row['id'] .
     ")' > 

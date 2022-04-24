@@ -36,7 +36,26 @@ $estado=$_POST['estado'];
 //$total=$_POST['total'];
 $faixa=$_POST['faixa'];
 $lista=new banco();
-$desconto=$lista->read2($_POST['faixa']);
+//$desconto=$lista->read2($_POST['faixa']);
+if($_POST['faixa'] == "Escolher" ){
+    $faixa_param = 1;
+    $tipo_param = $tipo_odonto;
+    $desconto=$lista->read2($faixa_param);
+    $desconto=$desconto[$tipo_param];
+  }elseif($_POST['faixa'] != "Escolher" && $tipo_odonto != "Escolher"){
+    $faixa_param = $faixa;
+    $desconto=$lista->read2($faixa);
+    $desconto_odonto=$lista->read2(1);
+    $desconto_tipo = str_replace(",",".",$desconto[$tipo]);
+    $desconto_tipo_o = str_replace(",",".",$desconto_odonto[$tipo_odonto]);
+    $desconto = $desconto_tipo + $desconto_tipo_o;
+    $desconto = str_replace(",",".",$desconto);
+  }else{
+    $faixa_param = $faixa;
+    $tipo_param = $tipo;
+    $desconto=$lista->read2($faixa_param);
+    $desconto=$desconto[$tipo_param];
+  }
 $nascimento=$_POST['data_nascimento'];
 
     //Data atual
@@ -64,8 +83,8 @@ elseif($mes==$mesnasc && $dia<=$dianasc){
 
    }
     
-$o-> update( $matricula,$nome,$cpf,$tipo,$tipo_odonto,$baneficiario,$idade,$adesao,$desconto[$tipo],$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado,$_POST['id']);
- echo  "<script> console.log('Registro incluído com sucesso!'); document.location='/astaj_valida/listar';</script>" ;
+$o-> update( $matricula,$nome,$cpf,$tipo,$tipo_odonto,$baneficiario,$idade,$adesao,$desconto,$nascimento,$faixa,$telefone,$cep,$rua,$numero,$bairro,$cidade,$estado,$_POST['id']);
+ echo  "<script> console.log('Registro incluído com sucesso!'); document.location='/valida/listar';</script>" ;
     //header('Location: /astaj_valida/listar');
    
 }

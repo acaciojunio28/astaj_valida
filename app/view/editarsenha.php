@@ -1,3 +1,5 @@
+<?php require('app/controller/conect.php');?>
+<?php require('app/controller/cessao.php');?>
 <?php require('layout/heder.php');?>
 <?php require('app/controller/updatesenha_controller.php');?>
 <div id="cadastro">

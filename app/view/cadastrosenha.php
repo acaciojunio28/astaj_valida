@@ -1,5 +1,6 @@
-<?php require('layout/heder.php');?>
+<?php require('app/controller/conect.php');?>
 <?php require('app/controller/cessao.php');?>
+<?php require('layout/heder.php');?>
 <div id="cadastro">
 
 <form method="POST" action="app/controller/createsenha_controller.php">

@@ -18,13 +18,13 @@ $verificar=$cadastro->login($_POST['login'],md5($_POST['senha']));
 
 if (mysqli_num_rows($verificar)!=1){
     
-    echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='/astaj_valida/';</script>";
+    echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='/valida/';</script>";
     
 }else{
     $resultado = mysqli_fetch_assoc($verificar);
     $_SESSION['login']=$resultado['acesso'];
     $_SESSION['senha'];
-    header("Location:/astaj_valida/listar");
+    header("Location:/valida/listar");
 } 
 
 

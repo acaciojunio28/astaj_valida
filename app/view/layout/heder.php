@@ -24,20 +24,20 @@
   <div class="container-fluid" >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link text-dark" href="/astaj_valida/listar">Home</a>
+        <a class="nav-link text-dark" href="/valida/listar">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="/astaj_valida/relatorio">Relatório</a>
+        <a class="nav-link text-dark" href="/valida/relatorio">Relatório</a>
       </li>
       
       <li class="nav-item">
-        <a class="nav-link text-dark" href="/astaj_valida/import-csv">Importar</a>
+        <a class="nav-link text-dark" href="/valida/import-csv">Importar</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#">Configuração</a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="/astaj_valida/faixaetaria">Planos</a></li>
-        <li><a class="dropdown-item" href="/astaj_valida/senha">Usuários</a></li>
+        <li><a class="dropdown-item" href="/valida/faixaetaria">Planos</a></li>
+        <li><a class="dropdown-item" href="/valida/senha">Usuários</a></li>
        </ul>
       </li>
 </ul>

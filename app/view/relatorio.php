@@ -6,7 +6,7 @@
 
 
 <div id="cadastro">
-<form method="POST" action="/astaj_valida/relatorio">
+<form method="POST" action="/valida/relatorio">
 <div class="row mb-3 ">
 <div class="col-md-1">
         <input type="text" name="matricula"  class="form-control margin-bottom" placeholder="Matricula">
@@ -48,6 +48,10 @@
             <option value="Ativo">Ativo</option>
             <option value="Inativo">Inativo</option>
         </select>
+        <!--<div  class="col-md-1">
+            <input type="checkbox" id="showInativos" name="showInativos" value="Inativo" checked>
+            <label for="showInativos">Inativos</label>
+        </div>-->
     </div>
 </div>
 <div class="row mb-3 ">
@@ -56,7 +60,7 @@
 </div>
 </form>
 <div class="col-md-1">
-<form method="POST" action="/astaj_valida/app/controller/planilha.php">
+<form method="POST" action="/valida/app/controller/planilha.php">
 <input type="hidden" name="matricula" value="<?php echo $_POST['matricula']; ?>">
 <input type="hidden" name="nome" value="<?php echo $_POST['nome']; ?>">
 <input type="hidden" name="cpf" value="<?php echo $_POST['cpf']; ?>">
@@ -91,7 +95,7 @@
     <th></th>
 </tr>
 </thead>
-<tbody id="myTable">
+<tbody id="myTableReport">
 
 <?php 
 

@@ -15,4 +15,4 @@ class delete_controller{
 $o=new delete_controller();
 $id = filter_input( INPUT_GET ,'id',FILTER_SANITIZE_NUMBER_INT);
 $o->delete($id);
-echo  "<script> document.location='/astaj_valida/senha';</script>" ;
+echo  "<script> document.location='/valida/senha';</script>" ;

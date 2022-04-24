@@ -7,7 +7,7 @@
 <div class="row">
 <div class="col-md-1">
 
-    <a class="btn btn-success" href="/astaj_valida/cadastro">Cadastrar</a>
+    <a class="btn btn-success" href="/valida/cadastro">Cadastrar</a>
     
 </div>
 
@@ -57,7 +57,7 @@ new read_controller($pagina) ?>
 if($pagina!=1){
 ?>
 <ul class='pagination'>
-<li class='page-item'><a class='page-link 1' href="/astaj_valida/listar?pagina=<?php 
+<li class='page-item'><a class='page-link 1' href="/valida/listar?pagina=<?php 
 echo $pagina-1;?>">Anterior</a></li></ul>
 <?php
 }
@@ -68,7 +68,7 @@ echo $pagina-1;?>">Anterior</a></li></ul>
 if($pagina<=$NP){
 ?>
 <ul class='pagination'>
-<li class='page-item'><a class='page-link ' href="/astaj_valida/listar?pagina=<?php 
+<li class='page-item'><a class='page-link ' href="/valida/listar?pagina=<?php 
 echo $pagina+1;?>">Posterior </a></li></ul>
 <?php
 }
@@ -115,7 +115,7 @@ echo $pagina+1;?>">Posterior </a></li></ul>
             echo "<td>Afinidade Versatil</td>";
             break;
         case 'plano_gold':
-                echo "<td> Plano Gold</td>";
+                echo "<td>Plano Gold</td>";
             break;
         case 'pleno_platinum':
                 echo "<td>Pleno Platinum</td>";

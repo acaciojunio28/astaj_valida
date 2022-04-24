@@ -15,7 +15,7 @@ class model{
    $this->mysql=mysqli_connect(BD_SERVIDOR,BD_USUARIO,BD_SENHA,BD_BANCO);
 
     } public function read(){
-        $verificar=mysqli_query($this->mysql,"SELECT * FROM astaje_tipo");
+        $verificar=mysqli_query($this->mysql,"SELECT * FROM tipo");
         while($row=mysqli_fetch_array($verificar)) {
             $array[]=$row;
         }
@@ -23,7 +23,7 @@ class model{
     }
 
     public function update($faixa,$tipo,$valor){
-    mysqli_query($this->mysql,"UPDATE astaje_tipo SET $tipo='$valor' WHERE faixa_etaria='$faixa'");
+    mysqli_query($this->mysql,"UPDATE tipo SET $tipo='$valor' WHERE faixa_etaria='$faixa'");
     }
    
 }

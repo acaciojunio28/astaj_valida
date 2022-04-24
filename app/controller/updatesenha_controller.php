@@ -24,7 +24,7 @@ $user=$_POST['user'];
 $acesso=$_POST['acesso'];
     
 $o-> update ( $nome,$user,$acesso,$_POST['id']);
- echo  "<script> console.log('Registro incluído com sucesso!'); document.location='/astaj_valida/senha';</script>" ;
+ echo  "<script> console.log('Registro incluído com sucesso!'); document.location='/valida/senha';</script>" ;
     //header('Location: /astaj_valida/listar');
    
 }

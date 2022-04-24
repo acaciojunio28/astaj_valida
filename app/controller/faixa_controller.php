@@ -11,4 +11,4 @@ class faixa_controller{
 }
 $o=new faixa_controller();
 $o->update($_POST['faixa'],$_POST['tipo'],$_POST['valor']);
-echo  "<script> console.log('Registro incluído com sucesso!'); document.location='/astaj_valida/listar';</script>" ;
+echo  "<script> console.log('Registro incluído com sucesso!'); document.location='/valida/listar';</script>" ;
