@@ -40,5 +40,11 @@ class senha_model{
     public function delete($id){
         mysqli_query($this->mysql,"DELETE FROM user WHERE id='$id'");
     }
-
+    public function pesquisaUser($user){
+        $verificar=mysqli_query($this->mysql,"SELECT * FROM user WHERE acesso='$user'");
+       return mysqli_fetch_assoc($verificar);
+            }
+    public function updateUser($senha,$user){
+         mysqli_query($this->mysql,"UPDATE user SET senha='$senha' WHERE user='$user'");
+            }
 }

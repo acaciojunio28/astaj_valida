@@ -37,12 +37,19 @@
         <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#">Configuração</a>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="/astaj_valida/faixaetaria">Faixa etária</a></li>
-        <li><a class="dropdown-item" href="/astaj_valida/senha">Senhas</a></li>
+        <li><a class="dropdown-item" href="/astaj_valida/senha">Acessos</a></li>
        </ul>
       </li>
 </ul>
 
    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+   
+   <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#"><?php echo $_SESSION['nome'];?></a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/astaj_valida/alterarsenha?user=<?php echo $_SESSION['user'];?>">Alterar Senha</a></li>
+       </ul>
+      </li>
       <li class="nav-item">
             <a class="nav-link text-dark " href="app/controller/sair.php">
         <img src="public/img/sair.png" width="30" height="30" alt="Sair" >

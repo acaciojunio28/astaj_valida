@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_GET['url'])){
 $url= $_GET['url'] ? $_GET['url']:"login";
 }
@@ -18,12 +19,13 @@ switch($url){
      break;
      case "login":
       include("app/view/login.php");
+      break;
       case"relatorio":
          include("app/view/relatorio.php");
       break;
       case"faixaetaria":
          include("app/view/faixaetaria.php");
-   break;
+      break;
    case"senha":
       include("app/view/listarsenha.php");
    break;
@@ -35,6 +37,9 @@ switch($url){
    break;
    case"editarsenha":
       include("app/view/editarsenha.php");
+   break;
+   case"alterarsenha":
+      include("app/view/alterarsenha.php");
    break;
 
 }

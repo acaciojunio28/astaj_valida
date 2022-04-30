@@ -1,7 +1,6 @@
-
+<?php require('app/controller/cessao.php');?>
 <?php require('layout/heder.php');?>
 <?php require('app/controller/faixalist_controller.php');?>
-<?php require('app/controller/cessao.php');?>
 
 </div>
 

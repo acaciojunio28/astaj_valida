@@ -23,7 +23,9 @@ if (mysqli_num_rows($verificar)!=1){
 }else{
     $resultado = mysqli_fetch_assoc($verificar);
     $_SESSION['login']=$resultado['acesso'];
-    $_SESSION['senha'];
+    $_SESSION['user']=$resultado['user'];
+    $_SESSION['senha']=$resultado['senha'];
+    $_SESSION['nome']=$resultado['nome'];
     header("Location:/astaj_valida/listar");
 } 
 

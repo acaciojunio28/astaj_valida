@@ -1,19 +1,45 @@
-<?php require('layout/heder.php');?>
 <?php require('app/controller/cessao.php');?>
+<?php require('layout/heder.php');?>
 <div id="cadastro">
 
-<form method="POST" action="app/controller/createsenha_controller.php">
+<script>
+        function valida(){
+
+        if(document.cadastro.nome.value==""){
+         alert("E nescessário digitar um nome válido.");
+        document.getElementById("cadastrar").focus();
+        return false;
+                }
+        if(document.cadastro.user.value==""){
+         alert("E nescessário digitar um usuário válido.");
+        document.getElementById("cadastrar").focus();
+        return false;
+                }
+        if(document.cadastro.senha.value==""){
+         alert("E nescessário digitar uma senha válido.");
+        document.getElementById("cadastrar").focus();
+        return false;
+                }
+        if(document.cadastro.acesso.value=="Escolher"){
+         alert("E nescessário escolher um acesso.");
+        document.getElementById("cadastrar").focus();
+        return false;
+                }
+        }
+</script>
+
+<form method="POST" action="app/controller/createsenha_controller.php" name="cadastro" onsubmit="return valida()">
 <div class="col-md-3">
 <label>Nome:</label>
-<input type="text" name="nome" id="senha" class="form-control">
+<input type="text" name="nome"  class="form-control">
 </div>
 <div class="col-md-3">
 <label>User:</label>
-<input type="text" name="user" id="senha" class="form-control">
+<input type="text" name="user"  class="form-control">
 </div>
 <div class="col-md-3">
 <label>Senha:</label>
-<input type="password" class="form-control mt-2" name="senha">
+<input type="password" name="senha" class="form-control mt-2">
 </div >
 <div class="col-md-3">
         <label>Acesso:</label>
