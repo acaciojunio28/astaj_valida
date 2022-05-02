@@ -37,5 +37,9 @@ switch($url){
    case"editarsenha":
       include("app/view/editarsenha.php");
       break;
+      case"alterarsenha":
+         include("app/view/alterarsenha.php");
+      break;
+   
 
 }

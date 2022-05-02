@@ -41,6 +41,14 @@
        </ul>
       </li>
 </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+   
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#"><?php echo $_SESSION['nome'];?></a>
+        <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/valida/alterarsenha">Alterar Senha</a></li>
+       </ul>
+        </li>
 
    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
       <li class="nav-item">

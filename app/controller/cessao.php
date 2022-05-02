@@ -1,15 +1,15 @@
 <?php
-//session_start();
+session_start();
 class cessao{
 
 public function conectar(){
 //session_start();
 //$nlo=$_SESSION['login'];
-if(!isset($_SESSION['login'])){
+if(is_null($_SESSION['login'])){
     header("Location:/valida/ ");  
 }
 if($_SESSION['login']!='administrador'){
-    header("Location:/valida/erro ");  
+    header("Location:/valida/erro ");
 }
  }
 

@@ -1,25 +1,17 @@
 <?php
-//session_start();
+session_start();
 
 class conect{
 
 public function conectar(){
 
-    $url="/valida/index.php";
-    //if(!isset($_SESSION['login'])){
-    //header("Location:".$url);
-    //exit();
-    //}
-    session_start();		
-	if($_SESSION['login'] == NULL || $_SESSION['login']== "")
-	{
-		header("Location: " . $url);
-		exit();
-	}
+$url="/valida";
+if(is_null($_SESSION['login'])){
+    header("Location:".$url);  
+}
  
 }
 
 }
 $D=new conect();
 $D->conectar();
-
