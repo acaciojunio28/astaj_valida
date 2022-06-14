@@ -23,6 +23,11 @@
         <option value="afinidade_basico"> Afinidade Básico </option>
         <option value="afinidade_pratico"> Afinidade Prático</option>
         <option value="afinidade_versatil"> Afinidade Versatil</option>
+      </select>
+</div>
+<div class="col-md-2 ">
+        <select name="odonto" class="form-control">
+        <option selected></option>
         <option value="plano_gold"> Plano Gold</option>
         <option value="pleno_platinum"> Pleno Platinum </option>
         <option value="pleno_diamond"> Pleno Diamond</option>
@@ -39,6 +44,8 @@
     <div class="col-md-2">
     <input type="date" name="adesao" " class="form-control" >
     </div>
+    </div>
+    <div class="row mb-3 ">
     <div class="col-md-1">
         <input type="text" name="idade"  class="form-control margin-bottom" placeholder="Idade">
     </div>
@@ -83,6 +90,7 @@
     <th>Nome</th>
     <th>CPF</th>
     <th>Tipo de Plano</th>
+    <th>Tipo de Plano Odonto</th>
     <th>Beneficiário</th>
     <th>Idade</th>
     <th>Adesão</th>
@@ -101,7 +109,7 @@
 
 $C=new read_controller() ;
 
-$C->tabela($_POST['matricula'],$_POST['nome'],$_POST['cpf'],$_POST['tipo'],$_POST['beneficiario'],$_POST['idade'],$_POST['adesao'],$_POST['ativo'],$_POST['buscar']);
+$C->tabela($_POST['matricula'],$_POST['nome'],$_POST['cpf'],$_POST['tipo'],$_POST['odonto'],$_POST['beneficiario'],$_POST['idade'],$_POST['adesao'],$_POST['ativo'],$_POST['buscar']);
 
 
 ?>

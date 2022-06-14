@@ -5,7 +5,7 @@ require('user_case/desconto.php');
 
 class read_controller{
 
-    public function tabela($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$ativo,$buscar){
+    public function tabela($matricula,$nome,$cpf,$tipo,$odonto,$beneficiario,$idade,$adesao,$ativo,$buscar){
        
         //$matricula='';
         //$nome='';
@@ -20,7 +20,7 @@ class read_controller{
     $lista=new buscar_model;
     $lista1=new banco;
     
-    $C=$lista-> buscar($matricula,$nome,$cpf,$tipo,$beneficiario,$idade,$adesao,$ativo);
+    $C=$lista-> buscar($matricula,$nome,$cpf,$tipo,$odonto,$beneficiario,$idade,$adesao,$ativo);
     $D=$lista1->read1();
     
      if(isset($buscar)){
@@ -51,8 +51,17 @@ class read_controller{
         case 'pleno_diamond':
                  echo "<td>Pleno Diamond</td>";
             break;
+        case 'Escolher':
+         echo "<td>-</td>";
+        break;
 
     }
+    if($row ['tipo_de_plano_odonto'] == "Escolher"){
+        $tipo_odonto_param = "-";
+    }else{
+        $tipo_odonto_param = $row['tipo_de_plano_odonto'];
+    }
+    echo  "<td>" . $tipo_odonto_param . "</td>" ;
     echo  "<td>" . $row ['beneficiario']. "</td>" ;
     echo  "<td>" . $row ['idade']. "</td>" ;
     echo  "<td>" . date('d/m/Y', strtotime($row['adesao'])). "</td>" ;
