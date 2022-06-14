@@ -1,4 +1,3 @@
-<?php //require('app/controller/cessao.php');?>
 <?php require('app/controller/conect.php');?>
 <?php require('app/controller/buscar_controller.php');?>
 <?php require ('layout/heder.php');?>

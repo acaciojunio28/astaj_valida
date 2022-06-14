@@ -43,25 +43,26 @@ class read_controller{
         case 'afinidade_versatil':
             echo "<td>Afinidade Versatil</td>";
             break;
-        case 'plano_gold':
-                echo "<td> Plano Gold</td>";
-            break;
-        case 'pleno_platinum':
-                echo "<td>Pleno Platinum</td>";
-        case 'pleno_diamond':
-                 echo "<td>Pleno Diamond</td>";
-            break;
         case 'Escolher':
          echo "<td>-</td>";
         break;
 
-    }
-    if($row ['tipo_de_plano_odonto'] == "Escolher"){
-        $tipo_odonto_param = "-";
-    }else{
-        $tipo_odonto_param = $row['tipo_de_plano_odonto'];
-    }
-    echo  "<td>" . $tipo_odonto_param . "</td>" ;
+    };
+    $list2=$row ['tipo_de_plano_odonto'];
+    switch ($list2) {
+        case 'plano_gold':
+            echo "<td>Plano Gold</td>";
+            break;
+        case 'pleno_platinum':
+            echo "<td>Pleno Platinum</td>";
+            break;
+        case 'pleno_diamond':
+            echo "<td>Pleno Diamond</td>";
+            break;
+        case 'Escolher':
+            echo "<td>-</td>";
+           break;
+    };
     echo  "<td>" . $row ['beneficiario']. "</td>" ;
     echo  "<td>" . $row ['idade']. "</td>" ;
     echo  "<td>" . date('d/m/Y', strtotime($row['adesao'])). "</td>" ;

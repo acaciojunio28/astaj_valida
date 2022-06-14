@@ -41,7 +41,7 @@
     <th>Situação</th>
     <th>Status</th>
     <th></th>
-    <th></th>
+    
 </tr>
 </thead>
 <tbody id="myTable">
